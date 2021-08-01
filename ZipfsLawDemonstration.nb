@@ -1,0 +1,2791 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[    136370,       2790]
+NotebookOptionsPosition[    110925,       2325]
+NotebookOutlinePosition[    124361,       2618]
+CellTagsIndexPosition[    124318,       2615]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Applications of Zipf\[CloseCurlyQuote]s Law Beyond Language", "Title",
+ CellChangeTimes->{{3.700774153171832*^9, 3.700774159196458*^9}, {
+  3.716902403353675*^9, 3.716902404538095*^9}, {3.739022378388857*^9, 
+  3.7390223820240192`*^9}},ExpressionUUID->"9c7e5c43-fa56-44d4-ba2d-\
+0a3358d35c58"],
+
+Cell["\<\
+From populations distribution to galaxy densities, Zipf\[CloseCurlyQuote]s \
+Law holds for much more than language\
+\>", "Abstract",
+ CellChangeTimes->{{3.700774172671139*^9, 3.700774220850109*^9}, {
+   3.700778895632181*^9, 3.700778896308676*^9}, {3.716902409622859*^9, 
+   3.7169024154226503`*^9}, 3.7354828213821573`*^9, {3.73548464781948*^9, 
+   3.735484648712131*^9}, {3.735587270504136*^9, 3.735587272381384*^9}, 
+   3.739022385078292*^9, {3.739022437894589*^9, 3.739022440950328*^9}, {
+   3.739022755820372*^9, 3.739022761147007*^9}, {3.739022872340239*^9, 
+   3.7390229257446737`*^9}, {3.739024963501178*^9, 3.7390249768460913`*^9}, {
+   3.739029301784399*^9, 3.7390293080118093`*^9}, {3.739032358642501*^9, 
+   3.73903238253271*^9}, 3.7390450778915033`*^9, {3.739047248385494*^9, 
+   3.739047257136496*^9}, {3.739132687287154*^9, 
+   3.739132690801527*^9}},ExpressionUUID->"e4a8a19c-99b7-46f6-aea0-\
+d5f73b6959fe"],
+
+Cell["Natasha Dada, Jun. 24,  2018", "AuthorInfo",
+ CellChangeTimes->{{3.7360942820567207`*^9, 3.736094285334813*^9}, {
+  3.736098860672957*^9, 3.7360988944763517`*^9}, {3.7360990983398457`*^9, 
+  3.736099107824772*^9}, {3.736099251923992*^9, 3.7360993016054573`*^9}, {
+  3.7368685297868023`*^9, 3.736868530751481*^9}, {3.736868726576907*^9, 
+  3.7368687285334053`*^9}, {3.7368690514137907`*^9, 3.736869059546919*^9}, {
+  3.736869099634509*^9, 3.73686915397053*^9}, {3.739022392328546*^9, 
+  3.739022394022016*^9}},ExpressionUUID->"60308592-a7e8-4cf2-8d62-\
+c55048a2b6d9"],
+
+Cell["", "Text",ExpressionUUID->"3f61b7f4-e59e-475f-ba94-c12939513b66"],
+
+Cell[TextData[StyleBox["An Introduction to Zipf\[CloseCurlyQuote]s Law", \
+"Section"]], "Text",
+ CellChangeTimes->{{3.700774312865305*^9, 3.700774350341485*^9}, 
+   3.716902427754265*^9, 3.7354828504054613`*^9, {3.735483653472313*^9, 
+   3.735483683917967*^9}, {3.7354849519274273`*^9, 3.735484958639419*^9}, {
+   3.7355873998710403`*^9, 3.73558761257386*^9}, {3.736099062603284*^9, 
+   3.736099062938388*^9}, 3.738588402126446*^9, {3.738588473865753*^9, 
+   3.738588479696198*^9}, {3.738588515044569*^9, 3.738588515882841*^9}, {
+   3.739024965428224*^9, 3.739024966085499*^9}, 3.7390452085208597`*^9, {
+   3.739045308957897*^9, 3.7390453436695127`*^9}, {3.7390455741902533`*^9, 
+   3.739045610029189*^9}, {3.7390458398394127`*^9, 3.7390458448059053`*^9}, {
+   3.739046054568162*^9, 3.7390460879842587`*^9}, {3.739046381058516*^9, 
+   3.739046418582106*^9}, {3.73904646589925*^9, 
+   3.739046484273849*^9}},ExpressionUUID->"899e2b65-a9d4-42dd-8842-\
+0222c8655288"],
+
+Cell["\<\
+Zipf\[CloseCurlyQuote]s Law is an empirical law that states that the \
+frequency ranks and the frequencies of words in spoken languages are \
+inversely related. This means that in any language, the frequency of the most \
+frequent word will be approximately twice the frequency of the second most \
+frequent word, three times the frequency of the third most frequent word, \
+etc. In other words, the most frequent word will occur approximately twice as \
+often as the second most frequent word, three times as often as the third \
+most frequent word, etc. Since its discovery, Zipf\[CloseCurlyQuote]s Law has \
+proven to describe a range of phenomena, some relating to language and many \
+from a variety of other fields. The law applies to letter frequencies in \
+addition to word frequencies in languages, population distributions, income \
+and wealth distributions, cooperation sizes, TV channel viewings, the \
+relative abundances of expressed genes, densities of galaxies, and much more. \
+This essay aims to explore and illustrate Zipf\[CloseCurlyQuote]s Law as \
+applied to languages as well as applications in population distribution and \
+wealth distribution.\
+\>", "Text",
+ CellChangeTimes->{{3.700774312865305*^9, 3.700774350341485*^9}, 
+   3.716902427754265*^9, 3.7354828504054613`*^9, {3.735483653472313*^9, 
+   3.735483683917967*^9}, {3.7354849519274273`*^9, 3.735484958639419*^9}, {
+   3.7355873998710403`*^9, 3.73558761257386*^9}, {3.736099062603284*^9, 
+   3.736099062938388*^9}, 3.738588402126446*^9, {3.738588473865753*^9, 
+   3.738588479696198*^9}, {3.738588515044569*^9, 3.738588515882841*^9}, 
+   3.739024965428224*^9, {3.739047408517047*^9, 3.7390474090187883`*^9}, {
+   3.739049805630556*^9, 3.739049820827607*^9}, {3.739116356254738*^9, 
+   3.739116357765057*^9}, {3.739116874479298*^9, 3.73911690187348*^9}, {
+   3.739198039118305*^9, 3.739198044281845*^9}, {3.739278569686606*^9, 
+   3.739278572664133*^9}},ExpressionUUID->"04f0e4b7-a9d8-43bd-9450-\
+4ca294d82600"],
+
+Cell[CellGroupData[{
+
+Cell["Zipf\[CloseCurlyQuote]s Law in Language", "Section",
+ CellChangeTimes->{
+  3.716825484342502*^9, {3.7354837120026693`*^9, 3.735483720370885*^9}, {
+   3.7354849131442633`*^9, 3.735484915566925*^9}, {3.735484977664678*^9, 
+   3.73548497936073*^9}, {3.735486235411076*^9, 3.735486260084824*^9}, {
+   3.735587708401764*^9, 3.735587719552019*^9}, {3.736094321292815*^9, 
+   3.736094380388455*^9}, {3.739046374592843*^9, 3.739046379055007*^9}, {
+   3.739049612541398*^9, 3.739049627978408*^9}, {3.739049670071918*^9, 
+   3.739049746907523*^9}, {3.739052232374875*^9, 3.739052235670467*^9}, {
+   3.7391169142398987`*^9, 3.739116916878846*^9}, 
+   3.739117906469533*^9},ExpressionUUID->"80b990bd-b8e5-4695-9928-\
+2d982c3ee21a"],
+
+Cell["\<\
+The following section will demonstrate Zipf\[CloseCurlyQuote]s Law as applied \
+to language. It is important to note that though English is used as an \
+example, Zipf\[CloseCurlyQuote]s law applies to all languages and all \
+alphabets, even constructed languages such as Esperanto.\
+\>", "Text",
+ CellChangeTimes->{{3.739181400911769*^9, 3.739181411207465*^9}, {
+   3.739181525483294*^9, 3.739181601563246*^9}, 3.739181647369175*^9, {
+   3.739225275732082*^9, 
+   3.739225281112548*^9}},ExpressionUUID->"4cc694fb-81c3-45ca-a5a0-\
+78a695c39c8f"],
+
+Cell[CellGroupData[{
+
+Cell["Zipf\[CloseCurlyQuote]s Law in English", "Subsection",
+ CellChangeTimes->{{3.7390513508717537`*^9, 3.739051374343453*^9}, {
+  3.7390535573112087`*^9, 
+  3.739053580101879*^9}},ExpressionUUID->"10c2f33e-be2d-4f13-b258-\
+206dcb09ec15"],
+
+Cell["\<\
+In order to demonstrate Zipf's Law in English, we can start with a list of \
+English Words.\
+\>", "Text",
+ CellChangeTimes->{{3.7354837220663652`*^9, 3.735483751473709*^9}, {
+   3.735486262485011*^9, 3.735486288116446*^9}, {3.735486386471116*^9, 
+   3.735486438104398*^9}, {3.735486495412992*^9, 3.7354864964790583`*^9}, {
+   3.735587802145555*^9, 3.735587813514737*^9}, {3.7360943822773247`*^9, 
+   3.736094388427802*^9}, 3.736868570517212*^9, {3.739047448348144*^9, 
+   3.739047452267548*^9}, {3.739047505042644*^9, 3.7390475759440327`*^9}, {
+   3.739047628821989*^9, 3.739047629254118*^9}, {3.739049701644861*^9, 
+   3.739049704460247*^9}},ExpressionUUID->"4fd390c1-41c9-4f67-b505-\
+4ff74e89388d"],
+
+Cell["A list of English words:", "CodeText",
+ CellChangeTimes->{{3.7354837283947477`*^9, 3.735483762505471*^9}, 
+   3.7354839554661007`*^9, {3.735486453399912*^9, 3.7354864557440453`*^9}, {
+   3.735486518874126*^9, 3.735486528166209*^9}, {3.735587823291749*^9, 
+   3.735587914389967*^9}, {3.735588066119091*^9, 3.735588068495346*^9}, 
+   3.736092052574951*^9, {3.7390475808069887`*^9, 3.739047595436942*^9}, 
+   3.7391879682677*^9},ExpressionUUID->"26fb8595-4d97-49b6-a01e-3ef7151c1bd2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WordList", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.735483764882769*^9, 3.735483804136156*^9}, {
+  3.735486531590019*^9, 3.735486538965722*^9}, {3.735486839352989*^9, 
+  3.735486841416996*^9}, {3.7390475978233147`*^9, 
+  3.739047604028842*^9}},ExpressionUUID->"af6f4d75-5dc6-427b-bad9-\
+b25d3a4e8d02"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"a\"\>", ",", "\<\"aah\"\>", ",", "\<\"aardvark\"\>", 
+           ",", "\<\"aback\"\>", ",", "\<\"abacus\"\>", ",", "\<\"abaft\"\>", 
+           ",", "\<\"abalone\"\>", ",", "\<\"abandon\"\>", 
+           ",", "\<\"abandoned\"\>", ",", "\<\"abandonment\"\>", 
+           ",", "\<\"abase\"\>", ",", "\<\"abasement\"\>", 
+           ",", "\<\"abash\"\>", ",", "\<\"abashed\"\>", 
+           ",", "\<\"abashment\"\>", ",", "\<\"abate\"\>", 
+           ",", "\<\"abatement\"\>", ",", "\<\"abattoir\"\>", 
+           ",", "\<\"abbe\"\>", ",", "\<\"abbess\"\>", ",", 
+           TemplateBox[{"40087"},
+            "OutputSizeLimit`Skeleton"], ",", "\<\"zloty\"\>", 
+           ",", "\<\"zodiac\"\>", ",", "\<\"zodiacal\"\>", 
+           ",", "\<\"zombie\"\>", ",", "\<\"zonal\"\>", ",", "\<\"zone\"\>", 
+           ",", "\<\"zoning\"\>", ",", "\<\"zoo\"\>", 
+           ",", "\<\"zoological\"\>", ",", "\<\"zoologist\"\>", 
+           ",", "\<\"zoology\"\>", ",", "\<\"zoom\"\>", 
+           ",", "\<\"zoophyte\"\>", ",", "\<\"zounds\"\>", 
+           ",", "\<\"zucchini\"\>", ",", "\<\"zwieback\"\>", 
+           ",", "\<\"zydeco\"\>", ",", "\<\"zygote\"\>", 
+           ",", "\<\"zygotic\"\>", ",", "\<\"zymurgy\"\>"}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          TagBox[
+           TooltipBox[
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "FEStrings", "sizeBriefExplanation"], StandardForm],
+               ImageSizeCache->{58., {2., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLText",
+             StripOnInput->False],
+            StyleBox[
+             DynamicBox[
+              ToBoxes[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+               StandardForm]], DynamicUpdating -> True, StripOnInput -> 
+             False]],
+           Annotation[#, 
+            Style[
+             Dynamic[
+              FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+             DynamicUpdating -> True], "Tooltip"]& ], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{50., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{50., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 11, 17155120884913204663, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{56., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{56., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 11, 17155120884913204663, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{42., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{42., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 11, 17155120884913204663, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{74., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{74., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    BaseStyle->"OutputSizeLimit",
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  If[17155120884913204663 === $SessionID, 
+   Out[11], Message[
+     MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
+   Null]]], "Output",
+ CellChangeTimes->{
+  3.7390476046737347`*^9},ExpressionUUID->"85cf0cad-1e3e-4215-a498-\
+5a1a60d311b9"]
+}, Open  ]],
+
+Cell["\<\
+We can then get the frequency of the one hundred most common words, sorted \
+from most frequent to least frequent. These frequency values are based on the \
+English Corpus and the frequency is the frequency of a word in a typical \
+published English text. The one hundred most frequent English words is taken \
+from an online dataset cited at the end of the essay.\
+\>", "Text",
+ CellChangeTimes->{{3.739047607717759*^9, 3.739047646723734*^9}, {
+  3.739047679877433*^9, 3.739047708777115*^9}, {3.7390477696277237`*^9, 
+  3.7390477728266687`*^9}, {3.739105389146595*^9, 3.739105433406509*^9}, {
+  3.7391179151421347`*^9, 3.739117915554618*^9}, {3.739117948614501*^9, 
+  3.739118012136136*^9}, {3.739208448124354*^9, 3.739208495595208*^9}, {
+  3.739265903501293*^9, 3.7392659089080343`*^9}, {3.7393555984989357`*^9, 
+  3.7393556003994007`*^9}, {3.739355702590993*^9, 
+  3.7393557029402323`*^9}},ExpressionUUID->"f6477d4b-2074-48ec-9915-\
+a78b72bc4345"],
+
+Cell["\<\
+The one hundred most frequently used English words and their frequencies\
+\>", "CodeText",
+ CellChangeTimes->{{3.739225510538451*^9, 3.7392255216668453`*^9}, {
+  3.739225722247197*^9, 
+  3.739225725819056*^9}},ExpressionUUID->"e375ba0b-c080-4602-9568-\
+7da82f3da720"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mostFrequentWords", " ", "=", " ", 
+   RowBox[{"WordFrequencyData", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<the\>\"", ",", "\"\<be\>\"", ",", "\"\<to\>\"", ",", "\"\<of\>\"", 
+      ",", "\"\<and\>\"", ",", "\"\<a\>\"", ",", "\"\<in\>\"", ",", 
+      "\"\<that\>\"", ",", "\"\<have\>\"", ",", "\"\<I\>\"", ",", 
+      "\"\<it\>\"", ",", "\"\<for\>\"", ",", "\"\<not\>\"", ",", "\"\<on\>\"",
+       ",", "\"\<with\>\"", ",", "\"\<he\>\"", ",", "\"\<as\>\"", ",", 
+      "\"\<you\>\"", ",", "\"\<do\>\"", ",", "\"\<at\>\"", ",", 
+      "\"\<this\>\"", ",", "\"\<but\>\"", ",", "\"\<his\>\"", ",", 
+      "\"\<by\>\"", ",", "\"\<from\>\"", ",", "\"\<they\>\"", ",", 
+      "\"\<we\>\"", ",", "\"\<say\>\"", ",", "\"\<her\>\"", ",", 
+      "\"\<she\>\"", ",", "\"\<or\>\"", ",", "\"\<an\>\"", ",", 
+      "\"\<will\>\"", ",", "\"\<my\>\"", ",", "\"\<one\>\"", ",", 
+      "\"\<all\>\"", ",", "\"\<would\>\"", ",", "\"\<there\>\"", ",", 
+      "\"\<their\>\"", ",", "\"\<what\>\"", ",", "\"\<so\>\"", ",", 
+      "\"\<up\>\"", ",", "\"\<out\>\"", ",", "\"\<if\>\"", ",", 
+      "\"\<about\>\"", ",", "\"\<who\>\"", ",", "\"\<get\>\"", ",", 
+      "\"\<which\>\"", ",", "\"\<go\>\"", ",", "\"\<me\>\"", ",", 
+      "\"\<when\>\"", ",", "\"\<make\>\"", ",", "\"\<can\>\"", ",", 
+      "\"\<like\>\"", ",", "\"\<time\>\"", ",", "\"\<no\>\"", ",", 
+      "\"\<just\>\"", ",", "\"\<him\>\"", ",", "\"\<know\>\"", ",", 
+      "\"\<take\>\"", ",", "\"\<people\>\"", ",", "\"\<into\>\"", ",", 
+      "\"\<year\>\"", ",", "\"\<your\>\"", ",", "\"\<good\>\"", ",", 
+      "\"\<some\>\"", ",", "\"\<could\>\"", ",", "\"\<them\>\"", ",", 
+      "\"\<see\>\"", ",", "\"\<other\>\"", ",", "\"\<than\>\"", ",", 
+      "\"\<then\>\"", ",", "\"\<now\>\"", ",", "\"\<look\>\"", ",", 
+      "\"\<only\>\"", ",", "\"\<come\>\"", ",", "\"\<its\>\"", ",", 
+      "\"\<over\>\"", ",", "\"\<think\>\"", ",", "\"\<also\>\"", ",", 
+      "\"\<back\>\"", ",", "\"\<after\>\"", ",", "\"\<use\>\"", ",", 
+      "\"\<two\>\"", ",", "\"\<how\>\"", ",", "\"\<our\>\"", ",", 
+      "\"\<work\>\"", ",", "\"\<first\>\"", ",", "\"\<well\>\"", ",", 
+      "\"\<way\>\"", ",", "\"\<even\>\"", ",", "\"\<new\>\"", ",", 
+      "\"\<want\>\"", ",", "\"\<because\>\"", ",", "\"\<any\>\"", ",", 
+      "\"\<these\>\"", ",", "\"\<give\>\"", ",", "\"\<day\>\"", ",", 
+      "\"\<most\>\"", ",", "\"\<us\>\""}], "}"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739132426180366*^9, 3.739132505115725*^9}, {
+   3.739132611685337*^9, 3.739132616611409*^9}, {3.739179832971526*^9, 
+   3.73917984639233*^9}, {3.739181688240238*^9, 3.7391817171281557`*^9}, 
+   3.739181823624206*^9, {3.7391818988397493`*^9, 3.739181978194434*^9}, {
+   3.739182174295555*^9, 3.739182183707143*^9}, {3.7391983772145452`*^9, 
+   3.739199087716098*^9}, {3.739208232874894*^9, 3.739208243686285*^9}, 
+   3.7392087321262197`*^9, {3.739225425556952*^9, 3.739225434399088*^9}, 
+   3.7392255248688717`*^9},
+ CellLabel->"In[4]:=",ExpressionUUID->"4f1838ab-d92f-43ae-a02b-125939dcb3a9"],
+
+Cell["\<\
+The one hundred most frequently used English words sorted by frequency\
+\>", "CodeText",
+ CellChangeTimes->{{3.739225526945174*^9, 
+  3.739225555392684*^9}},ExpressionUUID->"656af85a-afa0-480a-be0e-\
+d497ba9e4cd3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mostFrequentWords", "=", 
+   RowBox[{"Sort", "[", 
+    RowBox[{"mostFrequentWords", ",", "Greater"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739225557083742*^9, 3.739225566077332*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"86ca0a31-198a-4080-9244-682da702e8f4"],
+
+Cell[TextData[{
+ "From here, we can already see Zipf's Law. The most frequent English word \
+\"the\"",
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ "occurs approximately twice as often as the second most frequent English \
+word \"of\". Though the ratio between the frequencies is not exactly 2, an \
+inverse relationship becomes clearer farther down the list."
+}], "Text",
+ CellChangeTimes->{{3.7390483879009743`*^9, 3.739048459233788*^9}, {
+  3.7390485448160763`*^9, 3.739048545353058*^9}, {3.739048578447165*^9, 
+  3.739048593428199*^9}, {3.739182429063674*^9, 3.739182444175606*^9}, {
+  3.739182503798232*^9, 3.7391825308769093`*^9}, {3.739198170564433*^9, 
+  3.7391981707801037`*^9}, {3.739198326900978*^9, 3.739198326980012*^9}, {
+  3.7392768466261663`*^9, 
+  3.739276853977754*^9}},ExpressionUUID->"b344b560-8eef-4c5b-be3d-\
+dcb18e60931d"],
+
+Cell["\<\
+Comparing the frequency of the two most common English words:\
+\>", "CodeText",
+ CellChangeTimes->{{3.7390483879009743`*^9, 3.73904849579862*^9}, {
+   3.739094402096458*^9, 3.739094402096703*^9}, {3.739095451591734*^9, 
+   3.73909545433519*^9}, 
+   3.739187980492991*^9},ExpressionUUID->"aa5a9a2e-a7a6-49ca-9480-\
+8158381d717b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mostFrequentWords", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "/", 
+  RowBox[{"mostFrequentWords", "[", 
+   RowBox[{"[", "2", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.739094419684499*^9, 
+  3.7390944260002823`*^9}},ExpressionUUID->"2f562714-1c6f-41de-a29f-\
+3f531e841824"],
+
+Cell[BoxData["1.5439925006756323`"], "Output",
+ CellChangeTimes->{3.739094426485434*^9, 3.739132637501717*^9, 
+  3.739199112535297*^9, 3.7392254867745256`*^9, 3.739225568457363*^9, 
+  3.739276898879867*^9},ExpressionUUID->"a1af3f12-7ff5-42f8-8509-\
+b3b319a8a51d"]
+}, Open  ]],
+
+Cell["\<\
+Additionally, we can compare \[OpenCurlyDoubleQuote]the\
+\[CloseCurlyDoubleQuote] to the third most frequent word \
+\[OpenCurlyDoubleQuote]and\[CloseCurlyDoubleQuote]. Here, we get a ratio of \
+approximately 2, not 3, however, there is still an inverse relationship. If \
+we look farther down the list of words, we see that after the first few words \
+the relationship between frequency and rank is closely proportional to the \
+function 1/x.\
+\>", "Text",
+ CellChangeTimes->{{3.739048529889615*^9, 3.739048566567007*^9}, {
+  3.73904860926261*^9, 3.739048623304925*^9}, {3.739182538264968*^9, 
+  3.739182565615717*^9}, {3.739182653551056*^9, 3.739182717066782*^9}, {
+  3.739182898086594*^9, 3.739182934293604*^9}, {3.739182973408524*^9, 
+  3.739182974544774*^9}, {3.739198180246003*^9, 3.739198180525701*^9}, {
+  3.739198328546281*^9, 3.739198329347275*^9}, {3.7392768708094597`*^9, 
+  3.7392768787109137`*^9}, {3.7393556212104883`*^9, 
+  3.7393556568560047`*^9}},ExpressionUUID->"477d7b4a-77e7-4d02-beb2-\
+f19cbe0b3c13"],
+
+Cell["\<\
+Comparing the frequency of the most common and third most common English \
+words:\
+\>", "CodeText",
+ CellChangeTimes->{{3.739048529889615*^9, 3.739048566567007*^9}, {
+   3.73904860926261*^9, 3.739048640293518*^9}, {3.7390954330644712`*^9, 
+   3.7390954471833363`*^9}, 
+   3.739187981974641*^9},ExpressionUUID->"1a9e1898-165b-4989-8fac-\
+504e6b8fa631"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mostFrequentWords", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "/", 
+  RowBox[{"mostFrequentWords", "[", 
+   RowBox[{"[", "3", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.739048644064377*^9, 3.739048655140869*^9}, {
+  3.739094475776927*^9, 
+  3.739094478134345*^9}},ExpressionUUID->"1035ed1b-170f-470e-a705-\
+60a1a40e2153"],
+
+Cell[BoxData["2.1494235355698206`"], "Output",
+ CellChangeTimes->{3.739048656949745*^9, 3.73909447858049*^9, 
+  3.739132649165063*^9, 3.739199118518539*^9, 3.739225570688098*^9, 
+  3.73927690594305*^9},ExpressionUUID->"01c0db38-1d1e-4d03-9517-c41724858537"]
+}, Open  ]],
+
+Cell["\<\
+\[OpenCurlyDoubleQuote]The\[CloseCurlyDoubleQuote] is approximately ten times \
+as frequent as the tenth most frequent word \[OpenCurlyDoubleQuote]with\
+\[CloseCurlyDoubleQuote]. Though the first few words were not exactly \
+proportional to the curve 1/x, by the tenth word the data fit this function.\
+\>", "Text",
+ CellChangeTimes->{{3.739132800764269*^9, 3.739132856628837*^9}, {
+   3.7391827355474653`*^9, 3.739182739154312*^9}, {3.73918293842934*^9, 
+   3.7391829956642857`*^9}, {3.7392769136605263`*^9, 3.739276951760305*^9}, 
+   3.739355669321863*^9},ExpressionUUID->"d3cdebe6-4605-428b-a44f-\
+c1722932b229"],
+
+Cell["\<\
+Comparing the frequency of the most common and tenth most common English \
+words:\
+\>", "CodeText",
+ CellChangeTimes->{{3.739132866088427*^9, 3.739132868885127*^9}, 
+   3.73918798311843*^9},ExpressionUUID->"a829f7ab-9cbd-4d0d-b54a-\
+a6fe52a9c9fc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mostFrequentWords", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "/", 
+  RowBox[{"mostFrequentWords", "[", 
+   RowBox[{"[", "10", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7391327921806183`*^9, 
+  3.739132796607326*^9}},ExpressionUUID->"4b4c6be4-007a-4dd6-9641-\
+7dd6023bc5ca"],
+
+Cell[BoxData["9.459361592084683`"], "Output",
+ CellChangeTimes->{3.739132797062233*^9, 3.739199120498859*^9, 
+  3.739225572926367*^9},ExpressionUUID->"7c80c811-9e88-4900-a355-\
+cc5885b73ba6"]
+}, Open  ]],
+
+Cell["\<\
+To show the inverse relationship between frequency rank and frequency, we can \
+create a plot with the one hundred most frequent words, with rank on the \
+x-axis and frequency on the y-axis. We can also plot a curve proportional to \
+1/x to better illustrate the inverse relationship.\
+\>", "Text",
+ CellChangeTimes->{{3.739048668554657*^9, 3.739048687955348*^9}, {
+  3.73904879460885*^9, 3.7390487990605993`*^9}, {3.7390488643442287`*^9, 
+  3.739048864582121*^9}, {3.7390492537562723`*^9, 3.739049268451058*^9}, {
+  3.739049391836982*^9, 3.739049415481112*^9}, {3.739050129457272*^9, 
+  3.7390501367099543`*^9}, {3.7391434704188223`*^9, 3.739143476117291*^9}, {
+  3.739265949419806*^9, 3.739265991006508*^9}, {3.73927823260301*^9, 
+  3.73927824230418*^9}, {3.7393548138103333`*^9, 3.739354815123921*^9}, {
+  3.739355444218521*^9, 
+  3.739355444496255*^9}},ExpressionUUID->"bd4e9237-28cf-459e-90b5-\
+5497d801e063"],
+
+Cell["\<\
+A plot of frequency vs. rank for the one hundred most common English words \
+and a curve proportional to 1/x:\
+\>", "CodeText",
+ CellChangeTimes->{{3.739049422171331*^9, 3.7390494254107*^9}, {
+   3.739050145836398*^9, 3.739050174426436*^9}, {3.7391434599500027`*^9, 
+   3.739143466217798*^9}, {3.7391435284863567`*^9, 3.7391435320039263`*^9}, 
+   3.739187985102779*^9, {3.7392659979272423`*^9, 3.739266008470993*^9}, {
+   3.739354818947184*^9, 3.739354823460207*^9}, 
+   3.739355071960328*^9},ExpressionUUID->"5e491676-4c95-4a9d-b200-\
+8ccc568c5d15"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{"ListLinePlot", "[", 
+    RowBox[{"mostFrequentWords", ",", " ", 
+     RowBox[{"LabelingFunction", "\[Rule]", "False"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}], ",", "\n", "\t", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"mostFrequentWords", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "/", "x"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "0", ",", " ", "100"}], "}"}], ",", " ", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Gray", ",", " ", "Dashed"}], "}"}]}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], "\n", "]"}]], "Code",
+ CellChangeTimes->{{3.739272651714075*^9, 3.739272698272129*^9}, {
+   3.739273507966487*^9, 3.739273547352216*^9}, 3.739273824369854*^9, {
+   3.73935482742406*^9, 3.739354838502602*^9}, {3.73935500932512*^9, 
+   3.739355011632895*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"ce7492ba-b0fd-4515-b0da-8407c4e098ba"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       NCache[
+        Rational[1, 72], 0.013888888888888888`]], AbsoluteThickness[1.6], 
+      LineBox[CompressedData["
+1:eJw1yw1M1HUcx/FLYlIICEM5BEQeIzk4np/hPsBxHI9yd9xxKBXIkzwozAIC
+Oe4PEtPMIE2CZhAgOCAzIwQmznOgSEx0ilZEc5OHEcTjwDkLrMb3/9t+++31
+e+9jdThPmr6Nw+Gk/Xf/f7fOsqD6zGexSQv1AvpA0cijpLGfa8g6yHjZ8GzF
+8hR5JwKfZ9l03askG6O0N+BuXTtD5kI8Xyu5tU1NNsfp4rMxKSv55H14rW1g
+OVaQTbaG++3thv9sZpBtUZcemP7+QjrZHiH8i5l3V9PIDshNOafy6Eol78eJ
+wj8KBArWPBxUmlYHRbN2hvE5aWb/4GGyCyqf92jrZCaTXdHeyg1QX/yA7AaB
+2iGkOvw9sjtUuk/69f9KInugfFfd4LtJh8ieeKtx+6ujQtZeGDePebtn6CDZ
+Gy0vH09NzyvJPqjRS3Zz1GXtiyNew42XeQqyH67M2z0aSpWS/dHW0Frqasc6
+AJMVVSfzFRJyIHZvWy9X+7IOgusn+k73GuPIAtiui5o3olgD39w43eFYFL1l
+BrjgbrV+zDWKejBiIj+OsuSTmWD0+5463pcXQT0E9de9Ws4nkpkQPP28TG/p
+BzH1UORpT0lvTYioh8LbT97pNkrmCHHUbMnE9iO2C5ErL3aKXRNSD0PrWqe4
+YIXMhMGqXaU2vcp2ETgjnCviAraLwDcyGVF5sD0cGxWX+/1eh1IPR0CbYE09
+R+aIUR74zhtm37JdDK2RNNQ/C6EegdVu2RdiEZmJwNxor8er/WyPREr2qKpK
+m+2RuDlxafeeuWDqUXhwaSyr5BcyEwWLwoqdYV+xPRrCXVkzjUVsj4aB3L+0
+KYntMfAxms6L6AP1GNysyMBAA5kTC3Xl151GrJlY3Jer157Usv0AVqZXft/h
+JKB+AEYx3ztaNAdRj0PfPqtU25qALSMOC15T35XsITNxyNGY8GYn/besicPA
+ju4OSRKZI8Hs2uzxC90+tJegI3Bm8003MiPBw80Xn0q5ZI0EPVmGvGahN+2l
+SLj6d9nDRU/aS7FZ4nL7x2EyI0VK9AkTPQlZI0Vvz7VVLo/MkcFUEBidf8OD
+9jIYa00b/SQiMzI4TxoO3PEna2QYSda9PqByp308qiZHvgzhkxEPg+zxOxOL
+brSPhzAnomlx0ZX28VjmlmcUysgcOdz2il8o1l1oL0cpv+xMcDGZkaPF/NfM
+ohSyRo5jfNPHtmedaa+AkTPP/r6SR3sFuEuzT+UrjrRXwGyv32/DtWSNAvza
+uc3cDQfaJ+DI0LCfzYdkJCBh1cBa28ae9gkYSy74sy3ejvYJOJ9lUX9NTOYo
+cWjmQUSXJxlKuCQm6ntY29BeidbxZdmg1Jr2SuiotKwkTea0T4R9TkGWvJ4r
++BdQIaJv
+       "]]}}, {}, {}, {}, {}}, {{{}, {}, 
+     TagBox[
+      {GrayLevel[0.5], AbsoluteThickness[1.6], Opacity[1.], 
+       Dashing[{Small, Small}], LineBox[CompressedData["
+1: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
+m5tUXIq8ve9bPhH+B/KqIYY=
+        "]]},
+      Annotation[#, "Charting`Private`Tag$369420#1"]& ]}, {}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 100.}, {0, 0.025319521230936778`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.7392727044999733`*^9, 3.739272711300427*^9}, {
+   3.739273503458325*^9, 3.7392735478027267`*^9}, 3.739276836141027*^9, 
+   3.739278309486504*^9, {3.739354858564334*^9, 3.739354878856461*^9}, {
+   3.7393549555248537`*^9, 3.739354973164865*^9}, 3.739355025512019*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"8e7ff42f-20f8-4811-b6c5-584fa287b591"]
+}, Open  ]],
+
+Cell["\<\
+The above example illustrated Zipf\[CloseCurlyQuote]s Law as it was \
+discovered in language. The next sections will explore applications of Zipf\
+\[CloseCurlyQuote]s Law in other fields.\
+\>", "Text",
+ CellChangeTimes->{{3.739185658320236*^9, 3.7391857055993853`*^9}, {
+   3.739186047045105*^9, 3.739186086030417*^9}, 
+   3.7392254690833263`*^9},ExpressionUUID->"d8279a76-c2ee-4c0b-96c4-\
+5015f02ac14a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Zipf\[CloseCurlyQuote]s Law and Population Distribution", "Section",
+ CellChangeTimes->{
+  3.716825484342502*^9, {3.735483919282419*^9, 3.735483930584803*^9}, {
+   3.735486467547221*^9, 3.7354864678234043`*^9}, {3.7355877724233932`*^9, 
+   3.73558779245604*^9}, {3.73609433900439*^9, 3.736094368339192*^9}, 
+   3.7360944021880836`*^9, {3.739046491946354*^9, 3.7390465028313713`*^9}, {
+   3.739052240366467*^9, 3.7390522418373938`*^9}, {3.739186200084099*^9, 
+   3.7391862059063187`*^9}},ExpressionUUID->"1d8cfd54-c89c-4d85-b75e-\
+05253d3cf398"],
+
+Cell["\<\
+Now that we\[CloseCurlyQuote]ve seen how Zipf\[CloseCurlyQuote]s Law works in \
+language, we can look at its application to other phenomena. One such \
+phenomenon is city populations in each country. Just as frequency rank and \
+frequency of words are inversely related in language, the population rank and \
+population of cities in any country is also inversely related, following Zipf\
+\[CloseCurlyQuote]s law. This means that the most populous city in any \
+country has approximately twice the population of the second most populous \
+city, three times the population of the third most populous city, etc. In \
+this section, we will demonstrate this law by looking at data from the United \
+States. It is important to note that the United States is only an example and \
+Zipf\[CloseCurlyQuote]s Law applies to the population distribution of all \
+countries.\
+\>", "Text",
+ CellChangeTimes->{{3.735483932944489*^9, 3.7354839472643557`*^9}, 
+   3.735486472511282*^9, {3.735587929314433*^9, 3.735588040172488*^9}, {
+   3.7360944038458967`*^9, 3.736094409443921*^9}, 3.736868574101507*^9, {
+   3.739098897305105*^9, 3.739098917231065*^9}, {3.739098977248024*^9, 
+   3.7390991965284147`*^9}, {3.739099483020439*^9, 3.7390995255400057`*^9}, {
+   3.739120401281671*^9, 3.73912040149763*^9}, {3.7392289499687357`*^9, 
+   3.739228999705297*^9}, {3.7392660423782263`*^9, 
+   3.739266051025464*^9}},ExpressionUUID->"8d1c24b8-88f3-4f2a-98d8-\
+e4bd5bd5fb29"],
+
+Cell[CellGroupData[{
+
+Cell["Zipf\[CloseCurlyQuote]s Law and City Populations in the United States", \
+"Subsection",
+ CellChangeTimes->{{3.739099534011215*^9, 
+  3.739099543761425*^9}},ExpressionUUID->"e8207e80-af64-435f-9fe3-\
+cd4231c088cf"],
+
+Cell["\<\
+To demonstrate Zipf\[CloseCurlyQuote]s Law in city populations in the United \
+States, we can start with a list of the most populous US cities.\
+\>", "Text",
+ CellChangeTimes->{{3.739099559158579*^9, 3.739099581861994*^9}, {
+   3.739208574677627*^9, 3.73920860517395*^9}, {3.739209164669496*^9, 
+   3.739209165090354*^9}, 3.739209652928557*^9, 
+   3.739210033938959*^9},ExpressionUUID->"01ea6b02-d274-43bc-aa1c-\
+eb1b7c074431"],
+
+Cell["A list of cities in the US:", "CodeText",
+ CellChangeTimes->{{3.7354837283947477`*^9, 3.735483762505471*^9}, 
+   3.7354839554661007`*^9, {3.735588048797143*^9, 3.735588078242901*^9}, 
+   3.736092055787822*^9, {3.7390995870230217`*^9, 3.739099594205884*^9}, {
+   3.739108699477844*^9, 3.739108701390031*^9}, 
+   3.739188000069748*^9},ExpressionUUID->"e566cc49-029c-4033-9c5c-\
+9f100eeb89fe"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cities", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<New York\>\"", ",", "\"\<Los Angeles\>\"", ",", "\"\<Chicago\>\"", 
+     ",", "\"\<Houston\>\"", ",", "\"\<Phoenix\>\"", ",", 
+     "\"\<Philadelphia\>\"", ",", "\"\<San Antonio\>\"", ",", 
+     "\"\<San Diego\>\"", ",", "\"\<Dallas\>\"", ",", "\"\<San Jose\>\"", 
+     ",", "\"\<Austin\>\"", ",", "\"\<Jacksonville\>\"", ",", 
+     "\"\<San Francisco\>\"", ",", "\"\<Fort Worth\>\"", ",", 
+     "\"\<Indianapolis\>\"", ",", "\"\<Charlotte\>\"", ",", "\"\<Seattle\>\"",
+      ",", "\"\<Denver\>\"", ",", "\"\<Washington\>\"", ",", "\"\<Boston\>\"",
+      ",", "\"\<El Paso\>\"", ",", "\"\<Detroit\>\"", ",", 
+     "\"\<Nashville\>\"", ",", "\"\<Memphis\>\"", ",", "\"\<Portland\>\"", 
+     ",", "\"\<Oklahoma City\>\"", ",", "\"\<Las Vegas\>\"", ",", 
+     "\"\<Louisville\>\"", ",", "\"\<Baltimore\>\"", ",", "\"\<Milwaukee\>\"",
+      ",", "\"\<Albuquerque\>\"", ",", "\"\<Tucson\>\"", ",", 
+     "\"\<Fresno\>\"", ",", "\"\<Sacramento\>\"", ",", "\"\<Mesa\>\"", ",", 
+     "\"\<Atlanta\>\"", ",", "\"\<Long Beach\>\"", ",", "\"\<Omaha\>\"", ",", 
+     "\"\<Raleigh\>\"", ",", "\"\<Colorado Springs\>\"", ",", "\"\<Miami\>\"",
+      ",", "\"\<Virginia Beach\>\"", ",", "\"\<Oakland\>\"", ",", 
+     "\"\<Minneapolis\>\"", ",", "\"\<Tulsa\>\"", ",", "\"\<Arlington\>\"", 
+     ",", "\"\<New Orleans\>\"", ",", "\"\<Wichita\>\"", ",", 
+     "\"\<Cleveland\>\"", ",", "\"\<Tampa\>\"", ",", "\"\<Bakersfield\>\"", 
+     ",", "\"\<Anaheim\>\"", ",", "\"\<Honolulu\>\"", ",", 
+     "\"\<Santa Ana\>\"", ",", "\"\<Riverside\>\"", ",", 
+     "\"\<Corpus Christi\>\"", ",", "\"\<Lexington\>\"", ",", 
+     "\"\<Stockton\>\"", ",", "\"\<St. Louis\>\"", ",", "\"\<Saint Paul\>\"", 
+     ",", "\"\<Henderson\>\"", ",", "\"\<Pittsburgh\>\"", ",", 
+     "\"\<Cincinnati\>\"", ",", "\"\<Anchorage\>\"", ",", 
+     "\"\<Greensboro\>\"", ",", "\"\<Plano\>\"", ",", "\"\<Newark\>\"", ",", 
+     "\"\<Lincoln\>\"", ",", "\"\<Orlando\>\"", ",", "\"\<Irvine\>\"", ",", 
+     "\"\<Toledo\>\"", ",", "\"\<Jersey City\>\"", ",", "\"\<Chula Vista\>\"",
+      ",", "\"\<Durham\>\"", ",", "\"\<Fort Wayne\>\"", ",", "\"\<Laredo\>\"",
+      ",", "\"\<Buffalo\>\"", ",", "\"\<Madison\>\"", ",", "\"\<Lubbock\>\"", 
+     ",", "\"\<Chandler\>\"", ",", "\"\<Scottsdale\>\"", ",", "\"\<Reno\>\"", 
+     ",", "\"\<Norfolk\>\"", ",", "\"\<Winston\[Dash]Salem\>\"", ",", 
+     "\"\<North Las Vegas\>\"", ",", "\"\<Gilbert\>\"", ",", 
+     "\"\<Chesapeake\>\"", ",", "\"\<Irving\>\"", ",", "\"\<Hialeah\>\"", 
+     ",", "\"\<Garland\>\"", ",", "\"\<Fremont\>\"", ",", "\"\<Boise\>\"", 
+     ",", "\"\<Baton Rouge\>\"", ",", "\"\<Des Moines\>\"", ",", 
+     "\"\<Spokane\>\"", ",", "\"\<San Bernardino\>\"", ",", "\"\<Modesto\>\"",
+      ",", "\"\<Tacoma\>\"", ",", "\"\<Fontana\>\"", ",", 
+     "\"\<Santa Clarita\>\"", ",", "\"\<Birmingham\>\"", ",", 
+     "\"\<Oxnard\>\"", ",", "\"\<Fayetteville\>\"", ",", 
+     "\"\<Moreno Valley\>\"", ",", "\"\<Glendale\>\"", ",", "\"\<Yonkers\>\"",
+      ",", "\"\<Huntington Beach\>\"", ",", "\"\<Aurora\>\"", ",", 
+     "\"\<Salt Lake City\>\"", ",", "\"\<Amarillo\>\"", ",", 
+     "\"\<Montgomery\>\"", ",", "\"\<Grand Rapids\>\"", ",", 
+     "\"\<Little Rock\>\"", ",", "\"\<Akron\>\"", ",", "\"\<Augusta\>\"", 
+     ",", "\"\<Huntsville\>\"", ",", "\"\<Columbus\>\"", ",", 
+     "\"\<Grand Prairie\>\"", ",", "\"\<Shreveport\>\"", ",", 
+     "\"\<Overland Park\>\"", ",", "\"\<Tallahassee\>\"", ",", 
+     "\"\<Mobile\>\"", ",", "\"\<Port St. Lucie\>\"", ",", 
+     "\"\<Knoxville\>\"", ",", "\"\<Worcester\>\"", ",", "\"\<Tempe\>\"", 
+     ",", "\"\<Cape Coral\>\"", ",", "\"\<Brownsville\>\"", ",", 
+     "\"\<McKinney\>\"", ",", "\"\<Providence\>\"", ",", 
+     "\"\<Fort Lauderdale\>\"", ",", "\"\<Newport News\>\"", ",", 
+     "\"\<Chattanooga\>\"", ",", "\"\<Rancho Cucamonga\>\"", ",", 
+     "\"\<Frisco\>\"", ",", "\"\<Sioux Falls\>\"", ",", "\"\<Oceanside\>\"", 
+     ",", "\"\<Ontario\>\"", ",", "\"\<Vancouver\>\"", ",", 
+     "\"\<Santa Rosa\>\"", ",", "\"\<Garden Grove\>\"", ",", 
+     "\"\<Elk Grove\>\"", ",", "\"\<Pembroke Pines\>\"", ",", "\"\<Salem\>\"",
+      ",", "\"\<Eugene\>\"", ",", "\"\<Corona\>\"", ",", "\"\<Jackson\>\"", 
+     ",", "\"\<Cary\>\"", ",", "\"\<Fort Collins\>\"", ",", "\"\<Hayward\>\"",
+      ",", "\"\<Lancaster\>\"", ",", "\"\<Salinas\>\"", ",", 
+     "\"\<Palmdale\>\"", ",", "\"\<Sunnyvale\>\"", ",", "\"\<Hollywood\>\"", 
+     ",", "\"\<Clarksville\>\"", ",", "\"\<Pomona\>\"", ",", 
+     "\"\<Kansas City\>\"", ",", "\"\<Macon\>\"", ",", "\"\<Escondido\>\"", 
+     ",", "\"\<Paterson\>\"", ",", "\"\<Joliet\>\"", ",", 
+     "\"\<Naperville\>\"", ",", "\"\<Rockford\>\"", ",", "\"\<Torrance\>\"", 
+     ",", "\"\<Bridgeport\>\"", ",", "\"\<Savannah\>\"", ",", 
+     "\"\<Killeen\>\"", ",", "\"\<Bellevue\>\"", ",", "\"\<Mesquite\>\"", 
+     ",", "\"\<Syracuse\>\"", ",", "\"\<McAllen\>\"", ",", "\"\<Pasadena\>\"",
+      ",", "\"\<Orange\>\"", ",", "\"\<Fullerton\>\"", ",", "\"\<Dayton\>\"", 
+     ",", "\"\<Miramar\>\"", ",", "\"\<Olathe\>\"", ",", "\"\<Thornton\>\"", 
+     ",", "\"\<Waco\>\"", ",", "\"\<Murfreesboro\>\"", ",", "\"\<Denton\>\"", 
+     ",", "\"\<West Valley City\>\"", ",", "\"\<Midland\>\"", ",", 
+     "\"\<Carrollton\>\"", ",", "\"\<Roseville\>\"", ",", "\"\<Warren\>\"", 
+     ",", "\"\<Charleston\>\"", ",", "\"\<Hampton\>\"", ",", 
+     "\"\<Surprise\>\"", ",", "\"\<Coral Springs\>\"", ",", "\"\<Visalia\>\"",
+      ",", "\"\<Sterling Heights\>\"", ",", "\"\<Gainesville\>\"", ",", 
+     "\"\<Cedar Rapids\>\"", ",", "\"\<New Haven\>\"", ",", 
+     "\"\<Stamford\>\"", ",", "\"\<Elizabeth\>\"", ",", "\"\<Concord\>\"", 
+     ",", "\"\<Thousand Oaks\>\"", ",", "\"\<Kent\>\"", ",", 
+     "\"\<Santa Clara\>\"", ",", "\"\<Simi Valley\>\"", ",", 
+     "\"\<Lafayette\>\"", ",", "\"\<Topeka\>\"", ",", "\"\<Athens\>\"", ",", 
+     "\"\<Round Rock\>\"", ",", "\"\<Hartford\>\"", ",", "\"\<Norman\>\"", 
+     ",", "\"\<Victorville\>\"", ",", "\"\<Fargo\>\"", ",", 
+     "\"\<Berkeley\>\"", ",", "\"\<Vallejo\>\"", ",", "\"\<Abilene\>\"", ",", 
+     "\"\<Columbia\>\"", ",", "\"\<Ann Arbor\>\"", ",", "\"\<Allentown\>\"", 
+     ",", "\"\<Pearland\>\"", ",", "\"\<Beaumont\>\"", ",", 
+     "\"\<Wilmington\>\"", ",", "\"\<Evansville\>\"", ",", "\"\<Arvada\>\"", 
+     ",", "\"\<Provo\>\"", ",", "\"\<Independence\>\"", ",", 
+     "\"\<Lansing\>\"", ",", "\"\<Odessa\>\"", ",", "\"\<Richardson\>\"", 
+     ",", "\"\<Fairfield\>\"", ",", "\"\<El Monte\>\"", ",", 
+     "\"\<Rochester\>\"", ",", "\"\<Clearwater\>\"", ",", "\"\<Carlsbad\>\"", 
+     ",", "\"\<Springfield\>\"", ",", "\"\<Temecula\>\"", ",", 
+     "\"\<West Jordan\>\"", ",", "\"\<Costa Mesa\>\"", ",", 
+     "\"\<Miami Gardens\>\"", ",", "\"\<Cambridge\>\"", ",", 
+     "\"\<College Station\>\"", ",", "\"\<Murrieta\>\"", ",", 
+     "\"\<Downey\>\"", ",", "\"\<Peoria\>\"", ",", "\"\<Westminster\>\"", 
+     ",", "\"\<Elgin\>\"", ",", "\"\<Antioch\>\"", ",", "\"\<Palm Bay\>\"", 
+     ",", "\"\<High Point\>\"", ",", "\"\<Lowell\>\"", ",", 
+     "\"\<Manchester\>\"", ",", "\"\<Pueblo\>\"", ",", "\"\<Gresham\>\"", 
+     ",", "\"\<North Charleston\>\"", ",", "\"\<Ventura\>\"", ",", 
+     "\"\<Inglewood\>\"", ",", "\"\<Pompano Beach\>\"", ",", 
+     "\"\<Centennial\>\"", ",", "\"\<West Palm Beach\>\"", ",", 
+     "\"\<Everett\>\"", ",", "\"\<Richmond\>\"", ",", "\"\<Clovis\>\"", ",", 
+     "\"\<Billings\>\"", ",", "\"\<Waterbury\>\"", ",", 
+     "\"\<Broken Arrow\>\"", ",", "\"\<Lakeland\>\"", ",", 
+     "\"\<West Covina\>\"", ",", "\"\<Boulder\>\"", ",", "\"\<Daly City\>\"", 
+     ",", "\"\<Santa Maria\>\"", ",", "\"\<Hillsboro\>\"", ",", 
+     "\"\<Sandy Springs\>\"", ",", "\"\<Norwalk\>\"", ",", 
+     "\"\<Lewisville\>\"", ",", "\"\<Greeley\>\"", ",", "\"\<Davie\>\"", ",", 
+     "\"\<Green Bay\>\"", ",", "\"\<Tyler\>\"", ",", "\"\<League City\>\"", 
+     ",", "\"\<Burbank\>\"", ",", "\"\<San Mateo\>\"", ",", 
+     "\"\<Wichita Falls\>\"", ",", "\"\<El Cajon\>\"", ",", "\"\<Rialto\>\"", 
+     ",", "\"\<Lakewood\>\"", ",", "\"\<Edison\>\"", ",", "\"\<Davenport\>\"",
+      ",", "\"\<South Bend\>\"", ",", "\"\<Woodbridge\>\"", ",", 
+     "\"\<Las Cruces\>\"", ",", "\"\<Renton\>\"", ",", "\"\<Sparks\>\"", ",", 
+     "\"\<Clinton\>\"", ",", "\"\<Allen\>\"", ",", "\"\<Tuscaloosa\>\"", ",", 
+     "\"\<San Angelo\>\"", ",", "\"\<Vacaville\>\""}], "}"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.73909987757078*^9, 3.7390998785845337`*^9}, {
+  3.739209148861951*^9, 3.739209150256666*^9}, {3.739209374666935*^9, 
+  3.739209408987687*^9}, {3.739209594649683*^9, 3.7392095967824*^9}, {
+  3.739209708586338*^9, 3.739209709364512*^9}, {3.739209893144518*^9, 
+  3.7392098939934196`*^9}, {3.739210316168293*^9, 3.739210326461563*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"4706bc21-47a0-4aee-b4fc-ba1ffb651b3e"],
+
+Cell["\<\
+We can then get the population of each of these cities and sort this list by \
+population from most populous to least populous.\
+\>", "Text",
+ CellChangeTimes->{{3.739100120604175*^9, 3.739100144013743*^9}, {
+  3.739105509198903*^9, 3.73910550991817*^9}, {3.739142814259482*^9, 
+  3.7391428292753763`*^9}},ExpressionUUID->"a109650b-862a-4ab6-86e7-\
+2464e34c552b"],
+
+Cell["A list of US cities and their populations", "CodeText",
+ CellChangeTimes->{{3.739183968834877*^9, 3.739184022933065*^9}, 
+   3.739188003741725*^9, 3.739209232705885*^9, {3.7392092841793623`*^9, 
+   3.739209291163711*^9}},ExpressionUUID->"9dfb69e4-82be-47c0-9a27-\
+1b52bb806666"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cityPopulations", " ", "=", " ", 
+   RowBox[{"EntityValue", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Interpreter", "[", "\"\<City\>\"", "]"}], "[", "cities", "]"}],
+      ",", "\"\<Population\>\"", ",", "\"\<EntityPropertyAssociation\>\""}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739142780525427*^9, 3.739142787222447*^9}, {
+   3.7391429939799833`*^9, 3.739143002073724*^9}, {3.7392090295252857`*^9, 
+   3.739209032610505*^9}, {3.739209128909169*^9, 3.7392091382139397`*^9}, {
+   3.739209199596344*^9, 3.739209209961969*^9}, 3.7392099437669287`*^9, 
+   3.739210135320488*^9},
+ CellLabel->"In[9]:=",ExpressionUUID->"77d21882-3075-4e0b-be6f-61710dfed5a2"],
+
+Cell["A list of US cities sorted by population", "CodeText",
+ CellChangeTimes->{{3.739209235519956*^9, 3.739209236257142*^9}, {
+  3.7392092920177937`*^9, 
+  3.739209297251275*^9}},ExpressionUUID->"8f156357-6a82-49bd-bfb1-\
+77fae5d2b9d1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cityPopulations", " ", "=", " ", 
+   RowBox[{"Sort", "[", 
+    RowBox[{"cityPopulations", ",", "Greater"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739209299492655*^9, 3.739209306561592*^9}, 
+   3.7392105847614803`*^9},
+ CellLabel->"In[11]:=",ExpressionUUID->"cee9c72f-c558-44c5-a7a6-edf76b9efe6a"],
+
+Cell["\<\
+By comparing the first few results, we can already see that Zipf\
+\[CloseCurlyQuote]s Law applies. The most populous city in the United States, \
+New York City, has approximately twice the population of the second most \
+populous city, Los Angeles.\
+\>", "Text",
+ CellChangeTimes->{{3.7391005686397676`*^9, 
+  3.739100626398594*^9}},ExpressionUUID->"c162492d-23df-4a98-9b2b-\
+825449570293"],
+
+Cell["\<\
+Comparing the populations of the two most populous US cities:\
+\>", "CodeText",
+ CellChangeTimes->{{3.739100638392193*^9, 3.7391006525574636`*^9}, 
+   3.7391880084458923`*^9},ExpressionUUID->"8752d393-2e92-4f89-bece-\
+0aec0273fd77"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"cityPopulations", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], "/", 
+   RowBox[{"cityPopulations", "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.739100655416951*^9, 
+  3.7391006896795464`*^9}},ExpressionUUID->"1f54c34a-9088-4f5d-a28f-\
+1b2abf8be209"],
+
+Cell[BoxData["2.1471281752332936`"], "Output",
+ CellChangeTimes->{3.739100690111259*^9, 3.739142903050723*^9, 
+  3.739266864929434*^9},ExpressionUUID->"31f43c94-4b04-4208-ac79-\
+1c9008148ae9"]
+}, Open  ]],
+
+Cell["\<\
+We can also compare the population of the most populous city, New York, to \
+the population of the third most populous city, Chicago, and we get a ratio \
+of approximately 3, aligning with Zipf\[CloseCurlyQuote]s Law.\
+\>", "Text",
+ CellChangeTimes->{{3.739100720287014*^9, 3.739100749844387*^9}, {
+  3.739100962571371*^9, 
+  3.7391009805794*^9}},ExpressionUUID->"e609ae17-d2f9-4ca0-93a1-a78f14dffac0"],
+
+Cell["\<\
+Comparing the populations of the most populous and third most populous US \
+cities:\
+\>", "CodeText",
+ CellChangeTimes->{{3.739101106613377*^9, 3.739101107866846*^9}, {
+   3.739101189093543*^9, 3.7391012365558643`*^9}, 
+   3.7391880102217293`*^9},ExpressionUUID->"0283fb72-cced-4025-8df4-\
+0279e8c6d633"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"cityPopulations", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], "/", 
+   RowBox[{"cityPopulations", "[", 
+    RowBox[{"[", "3", "]"}], "]"}]}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.739100983975153*^9, 3.739100991459139*^9}, {
+  3.739142904633816*^9, 
+  3.7391429051359158`*^9}},ExpressionUUID->"fdf9be9f-297e-48e4-ab1b-\
+f539cd2eb69c"],
+
+Cell[BoxData["3.174252425040034`"], "Output",
+ CellChangeTimes->{{3.7391009890940933`*^9, 3.7391009918291197`*^9}, 
+   3.73914290560258*^9},ExpressionUUID->"447c5e81-3dc3-4271-a85d-\
+3062939a54bc"]
+}, Open  ]],
+
+Cell["\<\
+We can do the same comparison with the most and tenth most populous cities, \
+New York City and San Diego respectively, getting a ratio of approximately \
+10. Though this ratio is not exactly 10, an inverse relationship is still \
+clear.\
+\>", "Text",
+ CellChangeTimes->{{3.739100994735689*^9, 3.739101000938775*^9}, {
+  3.739101044940154*^9, 3.739101075867387*^9}, {3.7391012608671503`*^9, 
+  3.73910126705088*^9}, {3.739101311018362*^9, 3.73910137443874*^9}, {
+  3.739101476683324*^9, 3.73910148602711*^9}, {3.739120458776825*^9, 
+  3.739120484372899*^9}, {3.7391205219312353`*^9, 3.7391205758149147`*^9}, {
+  3.739184065041688*^9, 
+  3.739184074624948*^9}},ExpressionUUID->"493c8ba4-bb36-4c70-a226-\
+5b31801aaa6c"],
+
+Cell["\<\
+Comparing the populations of the most populous and tenth most populous US \
+cities:\
+\>", "CodeText",
+ CellChangeTimes->{{3.7391013037010193`*^9, 3.739101306505932*^9}, {
+   3.739101352377411*^9, 3.7391013574133*^9}, {3.739101483755315*^9, 
+   3.7391014842427*^9}, 
+   3.739188011533633*^9},ExpressionUUID->"2c363aa6-f933-4d01-8428-\
+66323a975b06"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"cityPopulations", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], "/", 
+   RowBox[{"cityPopulations", "[", 
+    RowBox[{"[", "10", "]"}], "]"}]}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.7391010771062307`*^9, 3.7391010876905727`*^9}, {
+  3.7391013191717453`*^9, 3.7391013472975197`*^9}, {3.7391013904112387`*^9, 
+  3.739101401585176*^9}, {3.739101489195479*^9, 3.739101491555108*^9}, {
+  3.739142909368856*^9, 
+  3.739142913656698*^9}},ExpressionUUID->"9f7a8fe7-9904-4d14-b8f9-\
+3fc7d79abd40"],
+
+Cell[BoxData["8.326593846003803`"], "Output",
+ CellChangeTimes->{{3.739101084192177*^9, 3.739101088101531*^9}, {
+   3.739101328525651*^9, 3.73910133768435*^9}, {3.7391013986251707`*^9, 
+   3.73910140328349*^9}, 3.7391014918886757`*^9, {3.739142907088355*^9, 
+   3.739142916653645*^9}, {3.739272344036337*^9, 
+   3.739272371049087*^9}},ExpressionUUID->"265485dd-ba18-4901-a240-\
+13d106c76f48"]
+}, Open  ]],
+
+Cell["\<\
+From here we can illustrate this inverse relationship with a graph of \
+population vs. population rank along with a curve proportional to 1/x.\
+\>", "Text",
+ CellChangeTimes->{{3.7391015229513493`*^9, 3.7391015774079313`*^9}, {
+  3.739120604157298*^9, 3.739120605609701*^9}, {3.739267071202051*^9, 
+  3.739267077482297*^9}, {3.739355060370666*^9, 3.739355060848669*^9}, {
+  3.739355131080866*^9, 3.73935514543919*^9}, {3.7393554577532263`*^9, 
+  3.73935546290317*^9}},ExpressionUUID->"6b518471-ed54-4b51-8b90-\
+a3745f22ce23"],
+
+Cell["\<\
+A plot of population vs. population rank for US cities and a curve \
+proportional to 1/x:\
+\>", "CodeText",
+ CellChangeTimes->{{3.7391015857518587`*^9, 3.7391015941200733`*^9}, {
+   3.739120655202456*^9, 3.739120662288508*^9}, 3.739188013309959*^9, {
+   3.7392670806974583`*^9, 3.73926708502402*^9}, {3.7393550645202103`*^9, 
+   3.739355066544194*^9}},ExpressionUUID->"e69bc16f-7a20-497b-8351-\
+ad49b5ff7cef"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{"ListLinePlot", "[", 
+    RowBox[{"cityPopulations", ",", " ", 
+     RowBox[{"LabelingFunction", "\[Rule]", "False"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}], ",", "\n", "\t", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"QuantityMagnitude", "[", 
+       RowBox[{"cityPopulations", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "]"}], "/", "x"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "0", ",", " ", 
+       RowBox[{"Length", "[", "cityPopulations", "]"}]}], "}"}], ",", " ", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Gray", ",", " ", "Dashed"}], "}"}]}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], "\n", "]"}]], "Code",
+ CellChangeTimes->{{3.739272407145129*^9, 3.739272524708509*^9}, {
+  3.7392733933488626`*^9, 3.739273395524951*^9}, {3.739273570001101*^9, 
+  3.7392735837423973`*^9}, {3.7393550025041857`*^9, 3.739355031700657*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"8d9098fc-b0d0-4622-abae-34c96090e724"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       NCache[
+        Rational[1, 90], 0.011111111111111112`]], AbsoluteThickness[1.6], 
+      LineBox[CompressedData["
+1:eJw10HuMVOUdxvEXFF1FdKiIa6By1JWulLTDCutIcTnIZdcLuF7QLa71cEes
+MhrFTby9RLHbsCajYhQT44kiasQwsWmysVWPpDHSIlkpBYyih8RFAhJHDXWL
+BdT3+f74YycfnnnOc35z3oIV1y0e7Jy7cJBzP3/qX23qT3+iLW3JNP4j/vnP
+tBvn4LrgMS/NwIXgo09OwyOCX1tfwvXB/qtL8Ojgc99vxlHwhpWT8PnBF42e
+iBuCe678LR4b/NgQc2PwokPj8bjgnZ+Pw+ODtz1l/k3wPVPNxeDNBfOE4OWn
+mJu09+ZF+OLg7KEL8cTg7rHmScGV3Q24OXj9FvMlwfEacym4udt8afDKxebJ
+wZ9ON/8ueN7BC/CU4Jb7zZcFp+3mluDC5vPxVD1vuTnW79OIvTxv+Hnk04Ib
+miJyecSeMeSXB9dNPpdc3vjUL8mnBxcXYC837hpNPiN44kLsZTfY8pnB4zeN
+Ipf3v4DdLLnVcnnti+eQtwZfPRV7ue25evK24NH9Z5PLpa3YXRE8o8dyeeIQ
+y68Mrg2MJJezrrPIrwo+7Q7s5YYlI8iv1vvuPZNc/uAj7GYHVwdZLrt3fkE+
+R8/rxl4euMfya/Q+UyyX44stbw9ev3e4HMtbH8We/F6cyZUm7K7V+x0v0Jd3
+HMBerszBmdzYgt11wWmD9eVkjPXJh1lfjhadQf/64GInjuVSK/Z4x+n05b7t
+2N0Q/OokHONR2MulE62Pa8Pozw0uPINjeXcFe7l8Ac7k7pHWv1H3DbW+vOzb
+0+jL9Z/gTB54A7ublG8dSl8utGAvVy7Dmdy1+FT6HcGNt+BY9rOxl7v2nUJf
+3t+P3e/1vv/EsVz3LPayf9j6cmG+9efp9zrL+nLvsTr6crYWZ3K1B7ubg0uP
+4FhOHrK+XF1ufbnWaf1Ovf8U68t1kfXl/UdOpi/H/8LuFt23Acdy7xPYy3GP
+9eXybOv/IbhvlvXl4nDrywN/O4m+nKzD7tbgfDWO5a4y9nKh1fpy2mz9RPc2
+4UjOvx3C8+Rnc5zIbjv2cv0bOJWrPTijPx/ncnsHdvODszYcyXmD7cvtdbYv
+d/WeyL7csRancl0nzvj+XJzjodgtCPZ9J7Avf7AEx3IyCSdyYQL2ct+2wezL
+pV6cyfUbcC6Xn8duYfD+VTiSuzpwLBfPwYlcfxL28u7vB7EvVw7jTM6+wbnc
+cQC7RdyPIzlbg2M5XoUTueKxl6NO26d/ue3jsbYvt5nd4uDufY59eWATjuXa
+6zjh+3/GXq78Caf4TpzJ7jac01+K3RLdP9f25VKr7cuNTbYvd4yzfTzK9ukX
+bF/uHWT7csHZ/tLganZc7xnJeS+O5cpqnMj+PuxltwynctqIM75/+Jicy+Vd
+2C3T/kgcyZWPj7IvF3bhRI53YC8Xn8ep7NfhTM4ewbmcP4DdbXrf+3EkV5fa
+vtz+a9sn3/t/9uW+jTiVkydxJsfdOMfXY7c8fNZm4kiuHPyBfdyPE9ltx14u
+bsapHL2FM/KNOMevYHe7fo91OJKTNbYv9yW2L1dvtX05nW77cnGy7cvlX9m+
+HJ1p+3/U/gm2L1fNMfnRI+zL6RHs5eLXOMWHcCb7vTiXs53Y3aH8PRzJhb/i
+WI422b7sVtg+319m+3K60Pbl8g22L1dLtn+n8iG2L/tj/2Nfjn/AiRx9hz39
+bTiVs404k4uv41zOn8ZuhZ7/BI7k4uO2L9cetn05WWj7cnm+7ct+ru3L0aW2
+z94w2y+Hz/TLAbkgZ/twJNc+w0W8C8dyeSdulysv46TMvbhM/1rs6c/GFbna
+jFOeNxhX6R//nvvkaNZ/5T45eeYw99K/qSbXZLfnEPffpfv/cpD78cwD3C/H
+LV9yv+zTfdyPz+jnfnzwC+7neStz7ud5N3/O/Xz/1c+4n/zD/3A/7vg39+O+
+7dxPf+yH3I+/2cL9uP997pfdg//g/rv1eeRd7scfvc39eM/fuR+veov78YQ3
+uR83vBz/CE859HA=
+       "]]}}, {}, {}, {}, {}}, {{{}, {}, 
+     TagBox[
+      {GrayLevel[0.5], AbsoluteThickness[1.6], Opacity[1.], 
+       Dashing[{Small, Small}], LineBox[CompressedData["
+1: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
+w/8BWNEIIA==
+        "]]},
+      Annotation[#, "Charting`Private`Tag$369982#1"]& ]}, {}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 293.}, {0, 8.537673*^6}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.739354896675569*^9, {3.7393550556201277`*^9, 3.739355083242311*^9}},
+ CellLabel->"Out[13]=",ExpressionUUID->"e56a5950-1f7c-428c-994d-51c096bc5da1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Zipf\[CloseCurlyQuote]s Law and World Population Distribution", \
+"Subsection",
+ CellChangeTimes->{{3.7391861822539663`*^9, 
+  3.739186219329056*^9}},ExpressionUUID->"7dbafe18-7528-4bcd-89ee-\
+c51c6759ba6a"],
+
+Cell["\<\
+Zipf\[CloseCurlyQuote]s Law applies to cities within each country, but it \
+also applies to world populations. That is, the population and population \
+rank of all the countries in the world are inversely related. To illustrate \
+this, we can start with a list of countries.\
+\>", "Text",
+ CellChangeTimes->{{3.7391862229381227`*^9, 
+  3.739186270017194*^9}},ExpressionUUID->"c541af1b-911e-4987-bf1f-\
+cbf9c456b4c5"],
+
+Cell["A list of countries:", "CodeText",
+ CellChangeTimes->{{3.739186271897517*^9, 3.739186274064355*^9}, 
+   3.739188039933111*^9},ExpressionUUID->"e1f529be-29a5-4eb7-9460-\
+17e9c985ef94"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"countries", " ", "=", " ", 
+   RowBox[{"EntityList", "[", 
+    TemplateBox[{
+     "\"all countries, dependencies, and territories\"",
+      RowBox[{"EntityClass", "[", 
+        RowBox[{"\"Country\"", ",", "\"Countries\""}], "]"}],
+      "\"EntityClass[\\\"Country\\\", \\\"Countries\\\"]\"","\"countries\""},
+     "EntityClass"], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739186277173657*^9, 3.7391862877161093`*^9}, 
+   3.739208815322979*^9},
+ CellLabel->"In[14]:=",ExpressionUUID->"1af9d3ee-7284-475f-8305-bfd2388134b1"],
+
+Cell["\<\
+We can then get the population of each country and sort this list by \
+population size, from most populous to least populous.\
+\>", "Text",
+ CellChangeTimes->{{3.739186303690373*^9, 3.739186322416164*^9}, {
+  3.739186367206973*^9, 
+  3.739186373821274*^9}},ExpressionUUID->"63824883-e610-4e01-99fd-\
+0f4c12319422"],
+
+Cell["A list of countries and their populations:", "CodeText",
+ CellChangeTimes->{{3.739186331575397*^9, 3.739186334721099*^9}, {
+   3.7391864141537037`*^9, 3.7391864320056*^9}, 
+   3.73918804246093*^9},ExpressionUUID->"c8a58890-60f9-4fd1-892e-\
+2573335a37a0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"countriesPopulations", " ", "=", " ", 
+   RowBox[{"EntityValue", "[", 
+    RowBox[{
+    "countries", ",", "\"\<Population\>\"", ",", 
+     "\"\<EntityPropertyAssociation\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7391863793770647`*^9, 3.7391863934148684`*^9}, 
+   3.73918644828071*^9, 3.739208812401555*^9},
+ CellLabel->"In[15]:=",ExpressionUUID->"ed62ac2f-2e94-455e-9b8c-8dc323a6bd00"],
+
+Cell["A list of countries sorted by population:", "CodeText",
+ CellChangeTimes->{{3.7391864393812733`*^9, 3.73918644502932*^9}, 
+   3.7391880473487597`*^9},ExpressionUUID->"22de9ff7-fb70-4a02-a1eb-\
+d9da1e05e343"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"countriesPopulations", " ", "=", " ", 
+   RowBox[{"Sort", "[", 
+    RowBox[{"countriesPopulations", ",", "Greater"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{
+  3.73920880623479*^9, {3.739266240164493*^9, 3.739266243842445*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"8bee2a04-6bdd-4790-8cfb-60e7702d25c0"],
+
+Cell["\<\
+We can now plot population vs. population rank along with a curve \
+proportional to 1/x to illustrate the inverse relationship between the two.\
+\>", "Text",
+ CellChangeTimes->{{3.739186461085868*^9, 3.7391864850777407`*^9}, {
+  3.739186951849708*^9, 3.739186955913151*^9}, {3.739267171643248*^9, 
+  3.7392671794491873`*^9}, {3.7393552061085176`*^9, 3.7393552100597677`*^9}, {
+  3.7393554744093323`*^9, 
+  3.739355479375451*^9}},ExpressionUUID->"de34a69d-e9de-4696-98bb-\
+44edc553614c"],
+
+Cell["\<\
+A plot of population vs. rank and a curve proportional to 1/x:\
+\>", "CodeText",
+ CellChangeTimes->{{3.739186945345776*^9, 3.739186949914084*^9}, {
+   3.7391870015325537`*^9, 3.739187010065474*^9}, 3.739188052581352*^9, {
+   3.739267181922317*^9, 3.739267190794607*^9}, 
+   3.73935521335614*^9},ExpressionUUID->"28cd2c05-c015-49d7-86da-\
+72b9e301adeb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{"ListLinePlot", "[", 
+    RowBox[{"countriesPopulations", ",", " ", 
+     RowBox[{"LabelingFunction", "\[Rule]", "False"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}], ",", "\n", "\t", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"QuantityMagnitude", "[", 
+       RowBox[{"countriesPopulations", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "]"}], "/", "x"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", 
+       RowBox[{"Length", "[", "countriesPopulations", "]"}]}], "}"}], ",", 
+     " ", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Gray", ",", " ", "Dashed"}], "}"}]}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], "\n", "]"}]], "Code",
+ CellChangeTimes->{{3.739272833236498*^9, 3.7392728777681627`*^9}, {
+  3.739273592460037*^9, 3.739273604021021*^9}, {3.7393551811875896`*^9, 
+  3.739355195029706*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"16c24da9-67b3-4562-88bd-5fc3c2c67ce8"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       NCache[
+        Rational[1, 72], 0.013888888888888888`]], AbsoluteThickness[1.6], 
+      LineBox[CompressedData["
+1:eJw11gtMVnUYx/H/FALNChZxKdRXBUEge1VSAZXjDRW5iXLxAhxQBBURFU1D
+7Q+agMNC3UTN7BBIWFakBFhuHlLBuTbxgl2G88W15Q2kcgrqNP/P83vf7d3Z
+h+c8/+85bGwMy1gTn9lPCNH38quu/OkJF0I7Mfnytan4gfby63S08CrsrBz5
+s+tJ2EW5qKDlO9hNuXfj7lrYU3namn01sLeyHnrwKGxRvr9hQhU8XNl5sF8l
+7KPc1Ft0BB6p7NbS325/Ze8I7QAcoOxz7lIFHKTcc3bxfni08mm/WLutysGD
+CvbBY5QPt97bC49VNmOP2T1OOeh4gN3ByqI4tRx+n+4f+N6n8HjlktjTn8AT
+lI0TaWXwROULK1N2wSHKtT4/lMKh5O5nJXAYvc/ToXZPov3IFzvhycqevjvt
+nkLP1zrU7nBlLX3ux7Cm7O9Yv4MtydaPfLZjPpXuH9YfluTfz6wuwnyactyg
+cFiSnWsmFmI+XTl7mQ8syW3rD0jMZyjnhbjDkizTPbdhPpPed979rZiTbWEN
+sIigfuEu+5xsPR9ln89SNkYtKMCcbC1r+BDz2crl+/fAkhznHmOfz6F+4jeb
+MSe3uby5CfNIet6d3h9gTtbyTmzEfK5y3dVMWJJl4wD7PIqer71lA+ZkOaJ5
+PebR9Dy1feswJ7fVPYRFDJ3fe2Mt5mSxayYsYun9KnryMCeLFV2wiFPOy/0F
+1sguRq39frJV94NNstH8Ihf78+i85xdhjax//iMs2e0esMnuPbAa+/H0+3pW
+noN9slHStBL7ZItbMWzy3NUlC/vzqX/12HLsky3bRsOS51kdmdgny7piWCyg
+8xolrJHF2kxYki3H85dhn+/vlwuLBHr+IyGwRhYDg2DJ88tu9n2yxffmUuwn
+Kpve+bBGNmKOZWCfnfIFbJLlgGRYJJFPecAa2YzblI599s0NsEk2sjxgkUzP
+e7dTxz7ZYuyGJVn3jYFNstZyOg37C+n8krOp2CdrweNhSZa9kUuwz/POqsXY
+X0TO/gzWyOLddFiSzdZVC7HP3j4fFovp/GK3ZOyTzSsXkrDP3jIONslad1oi
+9pfQPCEe1tgpJxOwTxZ/hMLmEu4NhkUKueDOAuyz28/Akiwet8/HPrv8dVik
+kvWt8dhnBybBkmz+2zUP+zxPPwSLNPLuJFgja6MCYMnz0/5x2CdL3REWOvnL
+27FsC1mkOsIaz/Nmx7B1nl/xhSXbywk22JpTFHq8H/Qkkm3DfDQs0mk+viEC
+fbJYlQpr7OPRsM4OnApLdvidmeiz3a/PQJ/Pb+6ehj47pxAWGeTrf2rosxdV
+wBpZRP0Ujj67uhaW7N+ypqDPfhQEm+wz6yejz96eOgn9peQhDmHos8Nuh6LP
+vtQdjD67w4Qle6kFNth9rrDJNieMQ5+958FY9JeRUx6MQZ/t1Qhr7JzoIPTZ
+d0MC0We/sjAAfXa+kz/6bOOUH/psh3xYZJLdv/JBn10dOAJ9dkficPTZ9V3D
+0Gd/PRc22D2dFvTZGdNhG9vlDVgsJ0d9OxR99oWt76DPll5vo88uK/VCn+25
+BTbYyYc90Md5ZbCNbet6C/0s8iB/N/TZfyW7os8uy3FBnx21HJbsnJGwwTai
+XkOf7XzTCX12bw0sssl1lY7os/3N/uiz2+bAOjtv7VON++yepidsA3M32GSb
+j/vYNrZLJSxW0DVuM2xhWzN72RpbS3vM1tm2W4/QZ/dEP0Qf81f/Q59tdPyD
+PnoOPeivpKse0Y0+PKsLfbal+B768BBYssW5u+jDRbDJ1mx30Gcbt/9GfxVd
+zXu30Gfr9bAGT4d13N/YiT7m52zos2UDbLKFJ2xja9k30M9hJ3SgzxYXr6GP
+eRWswwMvo8+Wpb+ij/09rejDz8+jj/u3wGI1+2gz+myxtwl92KEefXjH9+jD
+1hr04UPV6MMlVejD/pXo5/I1/yD6cHUF+nD5PvRhz1L0YWsh+rC5DlcYfyfC
+BvP//S8/a3Cdgr7dQvwPGo64Hg==
+       "]]}}, {}, {}, {}, {}}, {{{}, {}, 
+     TagBox[
+      {GrayLevel[0.5], AbsoluteThickness[1.6], Opacity[1.], 
+       Dashing[{Small, Small}], LineBox[CompressedData["
+1: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
+qVhwpOCLD0bL//jcwJ3LWJDVgYL/Ay/PSmM=
+        "]]},
+      Annotation[#, "Charting`Private`Tag$375458#1"]& ]}, {}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->Medium,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 249.}, {0, 1.397028553*^9}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.7392728830288277`*^9, 3.739272893019149*^9}, {
+   3.739273608746502*^9, 3.739273622320219*^9}, 3.739276845543543*^9, 
+   3.739278403610777*^9, 3.73935490061125*^9, {3.739355188728396*^9, 
+   3.739355195609847*^9}},
+ CellLabel->"Out[18]=",ExpressionUUID->"8776e91c-f5e2-409f-857e-d015b7288577"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Zipf\[CloseCurlyQuote]s Law and Population: Conclusion", "Subsection",
+ CellChangeTimes->{{3.739109645540494*^9, 
+  3.739109652203599*^9}},ExpressionUUID->"7cf40797-3021-4887-b1a8-\
+b088afec6c78"],
+
+Cell["\<\
+The examples in this section have helped to illustrate that within all \
+countries, regardless of population size, as well as countries\
+\[CloseCurlyQuote] relative populations follow a population distribution \
+aligned with Zipf\[CloseCurlyQuote]s Law. This is an incredible application \
+of Zipf\[CloseCurlyQuote]s Law and can help us to better understand the \
+nature of populations.\
+\>", "Text",
+ CellChangeTimes->{{3.739186127335372*^9, 3.739186149821587*^9}, {
+   3.739187074583694*^9, 3.739187095535289*^9}, {3.739187275759654*^9, 
+   3.739187301070292*^9}, 3.7391874308459797`*^9, {3.739187491450944*^9, 
+   3.739187592462826*^9}, {3.739199702773773*^9, 3.739199708862133*^9}, 
+   3.739266300811545*^9, {3.739267211987977*^9, 
+   3.739267213105027*^9}},ExpressionUUID->"d5f1d628-0619-47a4-84a8-\
+e3937e4cbf3e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Zipf\[CloseCurlyQuote]s Law and World Wealth Distribution", "Section",
+ CellChangeTimes->{
+  3.716825484342502*^9, {3.7169024799646597`*^9, 3.716902483419626*^9}, {
+   3.716902529770506*^9, 3.7169025326018753`*^9}, {3.736094413190734*^9, 
+   3.7360944203553658`*^9}, {3.739052250526313*^9, 
+   3.739052284460747*^9}},ExpressionUUID->"71a86117-da61-4f40-bc0a-\
+df18054d297b"],
+
+Cell["\<\
+Another application of Zipf\[CloseCurlyQuote]s Law is wealth distribution. \
+This means that in a corporation, for example, the person who makes the most \
+makes twice as much as the person who makes the second most, three times as \
+much as the person who makes the third most, etc. Zipf\[CloseCurlyQuote]s Law \
+holds for almost all wealth distributions, from the net worths of individuals \
+to incomes of countries. In this section, we will explore world wealth \
+distribution, using Gross Domestic Products (GDPs) of countries.\
+\>", "Text",
+ CellChangeTimes->{{3.739110115931007*^9, 3.7391102042806253`*^9}, {
+  3.7391105529956007`*^9, 3.739110643070798*^9}, {3.7391214004030943`*^9, 
+  3.739121499150365*^9}, {3.739121722227129*^9, 3.739121811431218*^9}, {
+  3.739122593996804*^9, 3.7391226301103287`*^9}, {3.739131293239091*^9, 
+  3.739131305102335*^9}, {3.73927843530107*^9, 
+  3.73927849209407*^9}},ExpressionUUID->"6ff8e9eb-0133-49fc-939e-\
+4bc49b95e6ec"],
+
+Cell["We start with a list of countries in the world.", "Text",
+ CellChangeTimes->{{3.739110649102914*^9, 
+  3.739110660133729*^9}},ExpressionUUID->"ff63891d-2cf1-470b-9d97-\
+56530ad96703"],
+
+Cell["A list of countries:", "CodeText",
+ CellChangeTimes->{{3.739110661678227*^9, 3.739110664160548*^9}, 
+   3.739188055564587*^9},ExpressionUUID->"09878b78-24dd-4f10-9d91-\
+92116b43061a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"countries", " ", "=", " ", 
+   RowBox[{"EntityList", "[", 
+    TemplateBox[{
+     "\"all countries, dependencies, and territories\"",
+      RowBox[{"EntityClass", "[", 
+        RowBox[{"\"Country\"", ",", "\"Countries\""}], "]"}],
+      "\"EntityClass[\\\"Country\\\", \\\"Countries\\\"]\"","\"countries\""},
+     "EntityClass"], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739110670427704*^9, 3.739110676531094*^9}, 
+   3.7392087972503357`*^9},ExpressionUUID->"f9a76a9b-6558-4d88-8238-\
+232a4d248130"],
+
+Cell["\<\
+We now look at the GDP of each country and sort from highest to lowest GDP. \
+Countries with missing data have been excluded.\
+\>", "Text",
+ CellChangeTimes->{{3.7391106906375103`*^9, 3.73911070748555*^9}, {
+  3.739123322041914*^9, 
+  3.739123336800025*^9}},ExpressionUUID->"569e109d-fd60-4c4d-8122-\
+0eb851b6eee6"],
+
+Cell["A list of countries and their GDPs:", "CodeText",
+ CellChangeTimes->{{3.7391107247681847`*^9, 3.739110729112994*^9}, {
+   3.739110797774193*^9, 3.73911079909872*^9}, 3.739188060996009*^9, {
+   3.739188106230755*^9, 
+   3.739188108888496*^9}},ExpressionUUID->"f170ff18-38c7-43a2-8d71-\
+ceffd2230b00"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"countriesGDPs", " ", "=", " ", 
+   RowBox[{"DeleteMissing", "[", 
+    RowBox[{"EntityValue", "[", 
+     RowBox[{
+     "countries", ",", "\"\<GDP\>\"", ",", 
+      "\"\<EntityPropertyAssociation\>\""}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739110804157763*^9, 3.739110844306446*^9}, {
+   3.739123346379231*^9, 3.7391233653244457`*^9}, {3.739123488035565*^9, 
+   3.739123646035907*^9}, {3.7391237377125998`*^9, 3.739123748422832*^9}, 
+   3.7391881103703527`*^9, 3.739208793705902*^9},
+ CellLabel->"In[19]:=",ExpressionUUID->"a5075b1d-1cd5-4af5-8042-6626e4527d20"],
+
+Cell["A list of countries sorted by GDP:", "CodeText",
+ CellChangeTimes->{{3.739188112408682*^9, 
+  3.739188117103099*^9}},ExpressionUUID->"caa19e2e-3af2-4748-954a-\
+e57759b9cca3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"countriesGDPs", " ", "=", " ", 
+   RowBox[{"Sort", "[", 
+    RowBox[{"countriesGDPs", ",", "Greater"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.739123751317955*^9, 3.739123751922275*^9}, 
+   3.739208787188158*^9},
+ CellLabel->"In[21]:=",ExpressionUUID->"84612d9d-d1a3-46e2-8637-c36c674baad6"],
+
+Cell["\<\
+By comparing individual entries, we can see the inverse relationship. \
+Comparing the highest GDP (United States) to the second highest GDP (China) \
+yields a ratio of approximately 2.\
+\>", "Text",
+ CellChangeTimes->{{3.739111313726716*^9, 3.739111315454356*^9}, {
+  3.739131108961301*^9, 3.739131155804805*^9}, {3.739131213139888*^9, 
+  3.7391312659668016`*^9}, {3.7391313188077583`*^9, 3.7391313566129704`*^9}, {
+  3.739131398414307*^9, 
+  3.739131431989159*^9}},ExpressionUUID->"4f8edcf1-82b5-448c-84ec-\
+65258b276b93"],
+
+Cell["A comparison of the two highest GDPs:", "CodeText",
+ CellChangeTimes->{{3.739131280638146*^9, 3.739131287213882*^9}, 
+   3.739131323447009*^9, 
+   3.739188065892289*^9},ExpressionUUID->"86e27fc2-131f-49ad-9c38-\
+8b359a58b6a0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"countriesGDPs", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "/", 
+  RowBox[{"countriesGDPs", "[", 
+   RowBox[{"[", "2", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.73913133078119*^9, 3.739131338252789*^9}, {
+  3.739131560429875*^9, 
+  3.739131573117687*^9}},ExpressionUUID->"e2292b68-821a-4594-af6a-\
+ff3a9df7952e"],
+
+Cell[BoxData["1.6630264844169091`"], "Output",
+ CellChangeTimes->{3.7391313386892157`*^9, 3.739131563944489*^9, 
+  3.739184586396307*^9, 
+  3.739278510011889*^9},ExpressionUUID->"cc38a966-b2a1-4850-afb2-\
+fac1c2d8f075"]
+}, Open  ]],
+
+Cell["\<\
+Comparing the GDP of the United States with the tenth highest GDP (Canada) \
+yields a ratio of approximately 10.\
+\>", "Text",
+ CellChangeTimes->{{3.7391313605125427`*^9, 3.739131383790266*^9}, {
+  3.739131438869018*^9, 
+  3.739131461397194*^9}},ExpressionUUID->"8473f7c6-a26a-4b91-812c-\
+e1183c3287c8"],
+
+Cell["A comparison of the highest and tenth highest GDPs:", "CodeText",
+ CellChangeTimes->{{3.7391314643250513`*^9, 3.739131473956555*^9}, 
+   3.7391880681162643`*^9},ExpressionUUID->"ba8c054d-b808-4cf1-8386-\
+5c88a6d11368"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"countriesGDPs", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "/", 
+  RowBox[{"countriesGDPs", "[", 
+   RowBox[{"[", "10", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.73913144979766*^9, 
+  3.739131456469516*^9}},ExpressionUUID->"01474d4c-7353-4b3d-8c96-\
+efb13c4f57ea"],
+
+Cell[BoxData["12.174765327609604`"], "Output",
+ CellChangeTimes->{3.7391314568069353`*^9, 3.7391845884123898`*^9, 
+  3.7392785131000853`*^9},ExpressionUUID->"e5102e45-fcbb-49c5-b2d1-\
+cd0ada423c6a"]
+}, Open  ]],
+
+Cell["\<\
+We can now plot GDP vs. rank along with a curve proportional to 1/x to \
+illustrate an inverse relationship between the two. \
+\>", "Text",
+ CellChangeTimes->{{3.7391108668669786`*^9, 3.739110877441166*^9}, {
+   3.739130861664356*^9, 3.739130861882654*^9}, {3.739180676590746*^9, 
+   3.739180722088841*^9}, {3.7391808663019333`*^9, 3.739180886496831*^9}, 
+   3.73918464460041*^9, {3.7392738596244907`*^9, 3.7392738673817377`*^9}, {
+   3.739355267930416*^9, 3.739355289146098*^9}, {3.739355489815639*^9, 
+   3.739355491471106*^9}},ExpressionUUID->"8aef8760-ff05-491c-a74b-\
+4ab308bdd745"],
+
+Cell[TextData[StyleBox["A plot of GDP vs. rank for all countries with a curve \
+proportional to 1/x:", "CodeText"]], "CodeText",
+ CellChangeTimes->{{3.7391109993220663`*^9, 3.7391110101289263`*^9}, 
+   3.739188071204279*^9, {3.739273869828967*^9, 3.739273879452257*^9}, 
+   3.739355264102128*^9},ExpressionUUID->"6093df3d-cbfb-4cd2-b454-\
+f1ca7b260800"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{"ListLinePlot", "[", 
+    RowBox[{"countriesGDPs", ",", " ", 
+     RowBox[{"LabelingFunction", "\[Rule]", "False"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}], ",", "\n", "\t", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"QuantityMagnitude", "[", 
+      RowBox[{
+       RowBox[{"countriesGDPs", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "/", "x"}], "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "0", ",", " ", 
+       RowBox[{"Length", "[", "countriesGDPs", "]"}]}], "}"}], ",", " ", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Gray", ",", "Dashed"}], "}"}]}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], "\n", "]"}]], "Code",
+ CellChangeTimes->{{3.739273669961604*^9, 3.739273746685171*^9}, {
+  3.73935524333473*^9, 3.739355250932496*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"c41354dc-43b6-431e-925e-5d2f7fa1bec8"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {{}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       NCache[
+        Rational[1, 72], 0.013888888888888888`]], AbsoluteThickness[1.6], 
+      LineBox[CompressedData["
+1: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
+SxF7SnLA1I2Wq+6mzxOb2Jdiy3caZSZ9T9mXwilt/0DpGrpRilUlhWkPE2kh
+BqfuNBmttaP1Y+D1aXJskNZj9mOwIMfFS317I/sxaDhaoem4npbHKPs1RR6P
+2Fd5R/qe++zHoGW/W/pEE7pRdX95vese+7FKf/qmmNaPRcL4Z9ul9Q3sx6Ju
+eZe64WRaFAtppmHJ+z/Wsz+0PzCFzlPtd4+8+hv7sUg3dOyrcqAblc/DUHdv
+Hftxyn3e/fRa9lU2u9x2m/04HE5cr9cWQotUd/0J62rYj8Pbe66BOp9Xsx8H
+2eb3bniUVLAfh9/Cr1Yen3qLfdW+/UtdWpApLTL+tox9GUyuSD9KSKYhQ0Hx
+i/oQTVokQ6C/f9fE5lL2VXtB9JTOUxkGh6+xL4PmUwv386Kr7MuwYfyzgXC/
+K+zHK5+XV9YWsx+PaY+s9wd1/MR+PD5avEk7OelH9lXPn6k6eZ59lRNGbTzH
+fjzuNuTuUNtWxH48jl/KUt889yT7qucbDs7/jv0EnBeVv8rI/5b9BNX7uTXh
+a/YTsDrDx6PTYRf7qrtgdXgH+wnIfKE1eWdyNvtD94GxW9hPwObFmc//4y1n
+f+i+dc5K9hNVPvehhP1Efp6Wdv8CepoF8w==
+       "]]}}, {}, {}, {}, {}}, {{{}, {}, 
+     TagBox[
+      {GrayLevel[0.5], AbsoluteThickness[1.6], Opacity[1.], 
+       Dashing[{Small, Small}], LineBox[CompressedData["
+1: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
++d8+bV3aEPaB0wQvf7ccMv4P2ZAsNQ==
+        "]]},
+      Annotation[#, "Charting`Private`Tag$378169#1"]& ]}, {}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 233.}, {0, 1.8624475*^13}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.7392737485558357`*^9, 3.739276850242508*^9, 
+  3.739278519005447*^9, 3.739355258344337*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"70ae3cbb-d17a-4b43-80f5-1009add0bd72"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Zipf\[CloseCurlyQuote]s Law and Wealth Distribution: Conclusion", \
+"Subsection",
+ CellChangeTimes->{{3.739143387489749*^9, 
+  3.739143400365467*^9}},ExpressionUUID->"6349cb48-951f-4c84-b6dd-\
+30a48bc89748"],
+
+Cell["\<\
+Applying Zipf\[CloseCurlyQuote]s Law to wealth distribution has many \
+implications. For instance, it helps explain why the top 1% of the world \
+population has half of total world wealth and why wealth gaps around the \
+world continue to grow. Though this section explored only one instance of \
+Zipf\[CloseCurlyQuote]s Law in wealth distribution, Zipf\[CloseCurlyQuote]s \
+Law has big implications in this field.\
+\>", "Text",
+ CellChangeTimes->{{3.739187846242649*^9, 3.73918793332515*^9}, {
+  3.739188135920483*^9, 3.739188136264102*^9}, {3.739188373436593*^9, 
+  3.739188468067647*^9}, {3.7392785378411083`*^9, 
+  3.7392785414388647`*^9}},ExpressionUUID->"64513898-2387-4fd7-aa4a-\
+b44246c28c0a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusion", "Section",
+ CellChangeTimes->{
+  3.716825484342502*^9, {3.7390522194308643`*^9, 3.739052226318222*^9}, {
+   3.739052292757154*^9, 3.739052293668621*^9}, {3.739199922590414*^9, 
+   3.7391999260998287`*^9}, {3.739199966871428*^9, 
+   3.739199996056308*^9}},ExpressionUUID->"4ce4584a-ef5b-4456-98a3-\
+2818457885e5"],
+
+Cell["\<\
+Zipf\[CloseCurlyQuote]s Law is significant because it allows us to explore \
+and better understand many phenomena not just individually, but also in \
+relation to each other. The implications of Zipf\[CloseCurlyQuote]s Law are \
+often incredibly powerful and far reaching. Though this essay explored only \
+few of the many applications of Zipf\[CloseCurlyQuote]s Law, it is a starting \
+point for how we can illustrate and understand Zipf\[CloseCurlyQuote]s Law.\
+\>", "Text",
+ CellChangeTimes->{{3.7391886949504538`*^9, 3.7391887002784853`*^9}, {
+   3.7391887379996023`*^9, 3.739188779508545*^9}, {3.739189069938175*^9, 
+   3.739189072195507*^9}, {3.739190804093987*^9, 3.739190810391054*^9}, {
+   3.739191388428487*^9, 3.739191405616577*^9}, {3.7391915974370823`*^9, 
+   3.7391916612196283`*^9}, {3.739192030985848*^9, 3.739192031050939*^9}, {
+   3.739192064352439*^9, 3.739192121862281*^9}, {3.739192166347035*^9, 
+   3.739192248817213*^9}, {3.739193969507992*^9, 3.739193997725204*^9}, {
+   3.739194494275321*^9, 3.739194496383471*^9}, {3.7391947968700533`*^9, 
+   3.739194815115623*^9}, {3.739194977082922*^9, 3.739194997996316*^9}, 
+   3.739195047475689*^9, {3.739199957308249*^9, 3.7391999576436663`*^9}, {
+   3.73927855712458*^9, 
+   3.739278560464032*^9}},ExpressionUUID->"dfb35fe9-a090-454a-a26f-\
+b52ea439b3c6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Further Explorations", "Section",
+ CellChangeTimes->{{3.70077612322993*^9, 3.7007761320921593`*^9}, {
+  3.7007787731699142`*^9, 3.70077877480995*^9}, {3.735655649442748*^9, 
+  3.735655649665411*^9}, {3.739051248055483*^9, 3.739051283205214*^9}, {
+  3.7391847446496897`*^9, 
+  3.7391847448577433`*^9}},ExpressionUUID->"e0209d8d-aead-4442-864f-\
+f78e6c65bced"],
+
+Cell[TextData[{
+ StyleBox["Related Laws: ", "Subsubsection"],
+ "Benford\[CloseCurlyQuote]s Law, the Pareto Principle, the Yule\[Dash]Simon \
+distribution, Price\[CloseCurlyQuote]s Law, Bradford\[CloseCurlyQuote]s Law, \
+Gibrat\[CloseCurlyQuote]s Law, Heap\[CloseCurlyQuote]s Law"
+}], "Text",
+ CellChangeTimes->{{3.7392108560248404`*^9, 
+  3.739210864493902*^9}},ExpressionUUID->"80556539-5226-4ddd-9a39-\
+0fab4c018e79"],
+
+Cell[TextData[{
+ StyleBox["Further applications of Zipf's Law:", "Subsubsection"],
+ " Income distributions, cooperation sizes, TV channel viewings, the relative \
+abundances of expressed genes, densities of galaxies"
+}], "Text",
+ CellChangeTimes->{{3.7007765492418337`*^9, 3.7007765636102467`*^9}, {
+   3.705104213701561*^9, 3.7051042224510612`*^9}, {3.7051697227932177`*^9, 
+   3.7051697367862177`*^9}, {3.7056847753333597`*^9, 3.7056847788413363`*^9}, 
+   3.705685608918363*^9, 3.716902605618763*^9, {3.739045691344687*^9, 
+   3.739045718593215*^9}, {3.7390521152058277`*^9, 3.7390521559525023`*^9}, {
+   3.739184994613003*^9, 3.739185024741963*^9}, {3.739185444114025*^9, 
+   3.7391854570347443`*^9}, {3.739189123559663*^9, 3.739189138926909*^9}, {
+   3.739198065460526*^9, 
+   3.7391980725255203`*^9}},ExpressionUUID->"73b73a34-6b7e-427d-911b-\
+19851fcc8d3e"],
+
+Cell[TextData[{
+ StyleBox["Zipf\[CloseCurlyQuote]s Law Over Time:", "Subsubsection"],
+ " Explore how Zipf\[CloseCurlyQuote]s Law has holds during periods of \
+change. In times of population change, for example, illustrate how despite a \
+decline in overall population, the relative distribution of populations is \
+maintained, following Zipf\[CloseCurlyQuote]s Law."
+}], "Text",
+ CellChangeTimes->{{3.7007765492418337`*^9, 3.7007765636102467`*^9}, {
+   3.705104213701561*^9, 3.7051042224510612`*^9}, {3.705105582902875*^9, 
+   3.7051055862950687`*^9}, 3.705685620863511*^9, 3.7169026105308657`*^9, 
+   3.735483436579891*^9, {3.739045916564148*^9, 3.7390459190658703`*^9}, {
+   3.7390462945461893`*^9, 3.73904629700562*^9}, {3.73918531061609*^9, 
+   3.739185433803493*^9}, {3.739190841724411*^9, 
+   3.739190846491728*^9}},ExpressionUUID->"58a67da7-42a5-49d7-95e3-\
+6438b1468ab2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Consulted Sources and Further Reading", "Section",
+ CellChangeTimes->{{3.736868777412567*^9, 3.736868791070746*^9}, {
+   3.739045925516801*^9, 3.739046023244301*^9}, {3.7390492183762693`*^9, 
+   3.739049218608541*^9}, {3.7390520648264*^9, 3.739052067091008*^9}, {
+   3.7390530510423307`*^9, 3.73905305921313*^9}, {3.739110920974505*^9, 
+   3.739110922034223*^9}, {3.7391304950717278`*^9, 3.7391304951915903`*^9}, {
+   3.739184710515607*^9, 3.739184737409924*^9}, {3.739185078577032*^9, 
+   3.739185079741609*^9}, 3.739185141373549*^9, {3.739185196643168*^9, 
+   3.739185204616679*^9}},ExpressionUUID->"90499b9c-2ae7-4d82-b336-\
+6ae386b6f347"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Zipf%27s_law", "Item",
+ FontColor->GrayLevel[0]]], "Item",
+ CellChangeTimes->{{3.7391851567409887`*^9, 3.7391851576359673`*^9}, {
+  3.739188661207316*^9, 
+  3.739188661207852*^9}},ExpressionUUID->"70b3f1e7-b9ff-41d2-be9b-\
+2f5d1a4359ac"],
+
+Cell[TextData[StyleBox["https://www.britannica.com/topic/Zipfs-law", "Item",
+ FontColor->GrayLevel[0]]], "Item",
+ CellChangeTimes->{{3.7391851567409887`*^9, 3.7391851576359673`*^9}, {
+  3.73918866142467*^9, 3.739188687671393*^9}, {3.739267308565181*^9, 
+  3.739267308565696*^9}},ExpressionUUID->"1e884cbd-5c1b-4838-86cf-\
+0131916118e1"],
+
+Cell[TextData[StyleBox["https://io9.gizmodo.com/the-mysterious-law-that-\
+governs-the-size-of-your-city-1479244159", "Item",
+ FontColor->GrayLevel[0]]], "Item",
+ CellChangeTimes->{{3.7391851567409887`*^9, 3.7391851576359673`*^9}, {
+   3.73918866142467*^9, 3.739188687671393*^9}, 
+   3.7392673086701107`*^9},ExpressionUUID->"41fe4ce4-b31b-4ec4-b8e7-\
+74fa0b6e79b3"],
+
+Cell[TextData[StyleBox["https://www.technologyreview.com/s/534251/\
+astrophysicists-prove-that-cities-on-earth-grow-in-the-same-way-as-galaxies-\
+in-space/", "Item",
+ FontColor->GrayLevel[0]]], "Item",
+ CellChangeTimes->{{3.7391851567409887`*^9, 
+  3.739185169691367*^9}},ExpressionUUID->"865412b5-cac2-496d-8028-\
+35aeaa3ef110"],
+
+Cell[TextData[StyleBox["https://www.ncbi.nlm.nih.gov/pubmed/12633463", "Item",
+ FontColor->GrayLevel[0]]], "Item",
+ CellChangeTimes->{{3.7391851567409887`*^9, 
+  3.739185179610725*^9}},ExpressionUUID->"3ab35014-2cdb-43b4-8da8-\
+03e98d15cfb7"],
+
+Cell[TextData[StyleBox[" \
+https://www.theguardian.com/commentisfree/2011/nov/11/occupy-movement-wealth-\
+power-law-distribution", "Item",
+ FontColor->GrayLevel[0]]], "Item",
+ CellChangeTimes->{{3.7391851567409887`*^9, 3.739185192844282*^9}, {
+  3.739210983655384*^9, 3.739210983655962*^9}, {3.7392672931266317`*^9, 
+  3.73926729415558*^9}},ExpressionUUID->"c4bb3510-85b3-4013-aadc-\
+7c9f34d6ef12"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/Most_common_words_in_\
+English", "Item",
+ FontColor->GrayLevel[0]]], "Item",
+ CellChangeTimes->{{3.7391851567409887`*^9, 3.739185192844282*^9}, {
+  3.739210983795437*^9, 
+  3.7392109886359673`*^9}},ExpressionUUID->"6f017daa-270b-4343-8563-\
+24741356bccf"],
+
+Cell[TextData[StyleBox["https://en.wikipedia.org/wiki/List_of_United_States_\
+cities_by_population", "Item",
+ FontColor->GrayLevel[0]]], "Item",
+ CellChangeTimes->{{3.7391851567409887`*^9, 3.739185183698051*^9}, {
+  3.739225248911787*^9, 
+  3.739225249477909*^9}},ExpressionUUID->"aa276761-4afd-4b1d-b852-\
+7a55909df414"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{979, 789},
+WindowMargins->{{203, Automatic}, {Automatic, 0}},
+WindowStatusArea->None,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData["Title"], PageWidth -> WindowWidth, ShowCellBracket -> False, 
+    CellMargins -> {{0, 0}, {0, 0}}, 
+    CellBracketOptions -> {"OverlapContent" -> True}, 
+    CellElementSpacings -> {"ClosedGroupTopMargin" -> 150}, 
+    CellGroupingRules -> {"TitleGrouping", 0}, PageBreakAbove -> True, 
+    CellFrameMargins -> {{20, 50}, {6, 78}}, TextAlignment -> Left, 
+    LineSpacing -> {1, 4}, LanguageCategory -> "NaturalLanguage", 
+    CounterIncrements -> {"Title"}, 
+    CounterAssignments -> {{"Section", 0}, {"Equation", 0}, {"Figure", 0}, {
+      "Subtitle", 0}, {"Subsubtitle", 0}, {"Item", 0}, {"Subitem", 0}, {
+      "Subsubitem", 0}, {"ItemNumbered", 0}, {"SubitemNumbered", 0}, {
+      "SubsubitemNumbered", 0}}, MenuSortingValue -> 1100, MenuCommandKey -> 
+    "1", FontFamily -> "Source Sans Pro", FontSize -> 44, 
+    FontTracking -> -0.8, FontColor -> RGBColor[255, 255, 255], Background -> 
+    RGBColor[0.71375, 0.20785, 0.17255]], 
+   Cell[
+    StyleData["Abstract"], PageWidth -> WindowWidth, ShowCellBracket -> False,
+     ShowSelection -> True, CellMargins -> {{0, 0}, {0, 0}}, 
+    CellBracketOptions -> {"OverlapContent" -> True}, 
+    CellFrameMargins -> {{30, 40}, {24, 2}}, TextAlignment -> Left, 
+    FontFamily -> "Source Sans Pro", FontSize -> 16, FontSlant -> "Italic", 
+    FontColor -> RGBColor[255, 255, 255], Background -> 
+    RGBColor[0.71375, 0.20785, 0.17255]], 
+   Cell[
+    StyleData["AuthorInfo"], PageWidth -> WindowWidth, 
+    CellFrame -> {{0, 0}, {8, 0}}, ShowCellBracket -> True, ShowSelection -> 
+    True, CellMargins -> {{0, 0}, {0, 0}}, 
+    CellBracketOptions -> {"OverlapContent" -> True}, 
+    CellFrameMargins -> {{30, 40}, {10, 4}}, CellFrameColor -> 
+    RGBColor[0.988235, 0.403922, 0.0313725], TextAlignment -> Left, 
+    FontFamily -> "Source Sans Pro", FontSize -> 17, FontWeight -> "SemiBold",
+     FontSlant -> "Plain", FontColor -> RGBColor[255, 255, 255], Background -> 
+    RGBColor[0.71375, 0.20785, 0.17255]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Chapter"], ShowCellBracket -> False, 
+       CellMargins -> {{20, 30}, {10, 45}}, 
+       StyleKeyMapping -> {
+        "Tab" -> "Subchapter", "Backspace" -> 
+         "Title", $CellContext`KeyEvent[
+          "Tab", $CellContext`Modifiers -> {$CellContext`Shift}] -> "Title"}, 
+       CellGroupingRules -> {"SectionGrouping", 10}, PageBreakBelow -> False, 
+       LineSpacing -> {1, 4}, LanguageCategory -> "NaturalLanguage", 
+       CounterIncrements -> "Chapter", 
+       CounterAssignments -> {{"Subchapter", 0}, {"Section", 0}, {
+         "Equation", 0}, {"Figure", 0}, {"Subsubtitle", 0}, {"Item", 0}, {
+         "Subitem", 0}, {"Subsubitem", 0}, {"ItemNumbered", 0}, {
+         "SubitemNumbered", 0}, {"SubsubitemNumbered", 0}}, MenuSortingValue -> 
+       1150, MenuCommandKey -> "2", FontFamily -> "Source Sans Pro", FontSize -> 
+       34, FontTracking -> -0.5, FontColor -> 
+       RGBColor[
+        0.21176470588235294`, 0.21176470588235294`, 0.21176470588235294`]], 
+      Cell[
+       StyleData["Chapter", "Presentation"], 
+       CellMargins -> {{67, Inherited}, {10, 15}}, LineSpacing -> {1, 16}, 
+       FontSize -> 48], 
+      Cell[
+       StyleData["Chapter", "SlideShow"], 
+       CellMargins -> {{
+         0.135 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.04 
+          FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {10, 15}}, 
+       LineSpacing -> {1, 2}, FontSize -> 48], 
+      Cell[
+       StyleData["Chapter", "Condensed"], CellMargins -> {{18, 10}, {5, 7}}, 
+       FontSize -> 14], 
+      Cell[
+       StyleData["Chapter", "Printout"], 
+       CellMargins -> {{10, Inherited}, {10, 15}}], 
+      Cell[
+       StyleData["Chapter", "PrintoutGray"], 
+       CellMargins -> {{10, Inherited}, {10, 15}}]}, Open]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Section"], CellFrame -> False, ShowCellBracket -> True, 
+       CellMargins -> {{20, 30}, {10, 25}}, Evaluatable -> False, 
+       CellGroupingRules -> {"SectionGrouping", 40}, PageBreakBelow -> False, 
+       CellChangeTimes -> {3.716825484342502*^9}, Hyphenation -> False, 
+       CounterIncrements -> "Section", 
+       CounterAssignments -> {{"Subsection", 0}, {"Subsubsection", 0}, {
+         "ItemNumbered", 0}}, AspectRatioFixed -> True, FontFamily -> 
+       "Source Sans Pro", FontSize -> 28, FontTracking -> -0.5, FontColor -> 
+       RGBColor[0.71375, 0.20785, 0.17255]], 
+      Cell[
+       StyleData["Section", "Presentation", StyleDefinitions -> None]], 
+      Cell[
+       StyleData["Section", "SlideShow", StyleDefinitions -> None]], 
+      Cell[
+       StyleData["Section", "Printout", StyleDefinitions -> None]]}, Open]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Subsection"], ShowCellBracket -> False, 
+       CellMargins -> {{20, 30}, {6, 12}}, 
+       CellGroupingRules -> {"SectionGrouping", 50}, PageBreakBelow -> False, 
+       Hyphenation -> False, LineSpacing -> {1, 1}, CounterIncrements -> 
+       "Subsection", 
+       CounterAssignments -> {{"Subsubsection", 0}, {"ItemNumbered", 0}}, 
+       FontFamily -> "Source Sans Pro", FontSize -> 23, FontTracking -> -0.5, 
+       FontColor -> RGBColor[0.71375, 0.20785, 0.17255]], 
+      Cell[
+       StyleData["Subsection", "Presentation", StyleDefinitions -> None]], 
+      Cell[
+       StyleData["Subsection", "SlideShow", StyleDefinitions -> None]], 
+      Cell[
+       StyleData["Subsection", "Printout", StyleDefinitions -> None]]}, 
+     Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       StyleData["Subsubsection"], ShowCellBracket -> False, 
+       CellMargins -> {{21, 21}, {2, 8}}, 
+       CellGroupingRules -> {"SectionGrouping", 60}, PageBreakBelow -> False, 
+       Hyphenation -> False, LineSpacing -> {1, 1}, CounterIncrements -> 
+       "Subsubsection", CounterAssignments -> {{"ItemNumbered", 0}}, 
+       FontFamily -> "Source Sans Pro", FontSize -> 18, FontTracking -> -0.5, 
+       FontColor -> RGBColor[0.9254901960784314, 0.49019607843137253`, 0.2]], 
+      Cell[
+       StyleData["Subsubsection", "Presentation", StyleDefinitions -> None]], 
+      Cell[
+       StyleData["Subsubsection", "SlideShow", StyleDefinitions -> None]], 
+      Cell[
+       StyleData["Subsubsection", "Printout", StyleDefinitions -> None]]}, 
+     Closed]], 
+   Cell[
+    StyleData["FurtherExplorationSection"], CellFrame -> {{0, 0}, {0, 0.5}}, 
+    ShowCellBracket -> False, CellMargins -> {{20, 30}, {4, 24}}, 
+    CellGroupingRules -> {"SectionGrouping", 30}, 
+    CellFrameMargins -> {{0, 0}, {0, 22}}, CellFrameColor -> GrayLevel[0.8], 
+    DefaultNewCellStyle -> "FurtherExploration", FontFamily -> 
+    "Source Sans Pro", FontSize -> 18, 
+    FontVariations -> {"CapsType" -> "AllCaps"}, FontColor -> 
+    RGBColor[0.2784313725490196, 0.2784313725490196, 0.2784313725490196]], 
+   Cell[
+    StyleData["FurtherExploration", StyleDefinitions -> StyleData["Text"]], 
+    ShowCellBracket -> False, CellMargins -> {{20, 10}, {2, 4}}, 
+    ReturnCreatesNewCell -> True, FontFamily -> "Source Sans Pro", FontSize -> 
+    16, FontColor -> RGBColor[0.71375, 0.20785, 0.17255]], 
+   Cell[
+    StyleData["AuthorshipSection"], ShowCellBracket -> False, 
+    CellMargins -> {{20, Inherited}, {4, 22}}, 
+    CellGroupingRules -> {"SectionGrouping", 30}, DefaultNewCellStyle -> 
+    "FurtherExploration", FontFamily -> "Source Sans Pro", FontSize -> 18, 
+    FontVariations -> {"CapsType" -> "AllCaps"}, FontColor -> 
+    RGBColor[0.2784313725490196, 0.2784313725490196, 0.2784313725490196]], 
+   Cell[
+    StyleData["Authorship", StyleDefinitions -> StyleData["Text"]], 
+    ShowCellBracket -> False, CellMargins -> {{20, 10}, {2, 4}}, 
+    ReturnCreatesNewCell -> True, FontFamily -> "Source Sans Pro", FontSize -> 
+    16, FontColor -> 
+    RGBColor[0.4392156862745098, 0.4392156862745098, 0.4392156862745098]], 
+   Cell[
+    CellGroupData[{
+      Cell["Styles for Body Text", "Section"], 
+      Cell[
+       CellGroupData[{
+         Cell[
+          StyleData["Text"], ShowCellBracket -> True, 
+          CellMargins -> {{20, 10}, {6, 8}}, ReturnCreatesNewCell -> True, 
+          DefaultNewCellStyle -> "Direction", FontSize -> 
+          15, $CellContext`DefaultReturnCreatedCellStyle -> "Direction"], 
+         Cell[
+          StyleData["Text", "Presentation", StyleDefinitions -> None]], 
+         Cell[
+          StyleData["Text", "SlideShow", StyleDefinitions -> None]], 
+         Cell[
+          StyleData["Text", "Printout", StyleDefinitions -> None], 
+          TextJustification -> 1.]}, Open]], 
+      Cell[
+       StyleData["CodeText", StyleDefinitions -> StyleData["Text"]], 
+       CellMargins -> {{23, 10}, {3, 8}}, CellFrameLabelMargins -> 4, 
+       MenuSortingValue -> 10000, MenuCommandKey -> "8", FontSize -> 15, 
+       FontWeight -> "Plain", FontColor -> 
+       GrayLevel[0.45], $CellContext`DefaultReturnCreatedCellStyle -> 
+       "Input"]}, Open]], 
+   Cell[
+    CellGroupData[{
+      Cell[
+      "Styles for Input, Output and Graphics", "Section", 
+       CellChangeTimes -> {3.7168930720372066`*^9}], 
+      Cell[
+       StyleData["Input"], CellMargins -> {{82, 10}, {5, 6}}, 
+       StyleKeyMapping -> {"=" -> "WolframAlphaShort", "*" -> "Item"}, 
+       AutoNumberFormatting -> False, FontSize -> 13], 
+      Cell[
+       CellGroupData[{
+         Cell[
+          StyleData["InputOnly"], CellMargins -> {{82, 10}, {7, 7}}, FontSize -> 
+          13], 
+         Cell[
+          StyleData["InputOnly", "Presentation"], 
+          CellMargins -> {{100, 10}, {8, 15}}], 
+         Cell[
+          StyleData["InputOnly", "SlideShow"], 
+          CellMargins -> {{100, 10}, {8, 15}}], 
+         Cell[
+          StyleData["InputOnly", "Condensed"], 
+          CellMargins -> {{50, 10}, {2, 3}}], 
+         Cell[
+          StyleData["InputOnly", "Printout"], 
+          CellMargins -> {{49, Inherited}, {Inherited, Inherited}}, 
+          LinebreakAdjustments -> {0.85, 2, 10, 1, 1}], 
+         Cell[
+          StyleData["InputOnly", "PrintoutGray"], 
+          CellMargins -> {{49, Inherited}, {Inherited, Inherited}}, 
+          LinebreakAdjustments -> {0.85, 2, 10, 1, 1}]}, Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell[
+          StyleData["Code"]], 
+         Cell[
+          StyleData["Code", "Presentation"], 
+          CellMargins -> {{100, 10}, {8, 15}}], 
+         Cell[
+          StyleData["Code", "SlideShow"], 
+          CellMargins -> {{
+            0.135 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+             FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {8, 15}}, 
+          LinebreakAdjustments -> {1, 2., 12., 1., 1.}, FontSize -> 20], 
+         Cell[
+          StyleData["Code", "Condensed"], CellMargins -> {{50, 10}, {2, 3}}], 
+         Cell[
+          StyleData["Code", "Printout"], 
+          CellMargins -> {{49, Inherited}, {Inherited, Inherited}}], 
+         Cell[
+          StyleData["Code", "PrintoutGray"], 
+          CellMargins -> {{49, Inherited}, {Inherited, Inherited}}]}, 
+        Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell[
+          StyleData["Output"], CellMargins -> {{82, 10}, {10, 5}}, FontSize -> 
+          13], 
+         Cell[
+          StyleData["Output", "Presentation"], 
+          CellMargins -> {{100, 10}, {15, 8}}], 
+         Cell[
+          StyleData["Output", "SlideShow"], 
+          CellMargins -> {{
+            0.135 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 0.01 
+             FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {15, 8}}, 
+          LinebreakAdjustments -> {1, 2., 12., 1., 1.}, FontSize -> 20], 
+         Cell[
+          StyleData["Output", "Condensed"], 
+          CellMargins -> {{50, Inherited}, {3, 2}}], 
+         Cell[
+          StyleData["Output", "Printout"], 
+          CellMargins -> {{49, Inherited}, {9, 3}}], 
+         Cell[
+          StyleData["Output", "PrintoutGray"], 
+          CellMargins -> {{49, Inherited}, {9, 3}}]}, Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell[
+          StyleData["PlacedGraphics"], CellFrame -> False, ShowCellBracket -> 
+          False, CellMargins -> {{82, 21}, {8, 10}}, CellGroupingRules -> 
+          "GraphicsGrouping", CellHorizontalScrolling -> True, ShowCellLabel -> 
+          False, TextAlignment -> Left, LineSpacing -> {1, 1}, 
+          InsetBoxOptions -> {
+           BaseStyle -> {CellFrame -> None, Background -> None}}], 
+         Cell[
+          StyleData[
+          "PlacedGraphics", "Presentation", StyleDefinitions -> None]], 
+         Cell[
+          StyleData["PlacedGraphics", "SlideShow", StyleDefinitions -> None]], 
+         Cell[
+          StyleData["PlacedGraphics", "Printout", StyleDefinitions -> None]]},
+         Closed]], 
+      Cell[
+       StyleData["CellLabel"], LineSpacing -> {1, 1}, AutoNumberFormatting -> 
+       False, FontSize -> 9, FontSlant -> "Oblique"]}, Open]]}, Visible -> 
+  False, FrontEndVersion -> "12.0 for Mac OS X x86 (64-bit) (April 8, 2019)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[422, 15, 299, 4, 141, "Title",ExpressionUUID->"9c7e5c43-fa56-44d4-ba2d-0a3358d35c58"],
+Cell[724, 21, 933, 15, 49, "Abstract",ExpressionUUID->"e4a8a19c-99b7-46f6-aea0-d5f73b6959fe"],
+Cell[1660, 38, 572, 8, 44, "AuthorInfo",ExpressionUUID->"60308592-a7e8-4cf2-8d62-c55048a2b6d9"],
+Cell[2235, 48, 71, 0, 34, "Text",ExpressionUUID->"3f61b7f4-e59e-475f-ba94-c12939513b66"],
+Cell[2309, 50, 964, 14, 50, "Text",ExpressionUUID->"899e2b65-a9d4-42dd-8842-0222c8655288"],
+Cell[3276, 66, 2000, 29, 195, "Text",ExpressionUUID->"04f0e4b7-a9d8-43bd-9450-4ca294d82600"],
+Cell[CellGroupData[{
+Cell[5301, 99, 725, 11, 71, "Section",ExpressionUUID->"80b990bd-b8e5-4695-9928-2d982c3ee21a"],
+Cell[6029, 112, 554, 10, 57, "Text",ExpressionUUID->"4cc694fb-81c3-45ca-a5a0-78a695c39c8f"],
+Cell[CellGroupData[{
+Cell[6608, 126, 239, 4, 48, "Subsection",ExpressionUUID->"10c2f33e-be2d-4f13-b258-206dcb09ec15"],
+Cell[6850, 132, 710, 12, 34, "Text",ExpressionUUID->"4fd390c1-41c9-4f67-b505-4ff74e89388d"],
+Cell[7563, 146, 487, 6, 31, "CodeText",ExpressionUUID->"26fb8595-4d97-49b6-a01e-3ef7151c1bd2"],
+Cell[CellGroupData[{
+Cell[8075, 156, 328, 6, 28, "Input",ExpressionUUID->"af6f4d75-5dc6-427b-bad9-b25d3a4e8d02"],
+Cell[8406, 164, 8811, 223, 161, "Output",ExpressionUUID->"85cf0cad-1e3e-4215-a498-5a1a60d311b9"]
+}, Open  ]],
+Cell[17232, 390, 960, 15, 80, "Text",ExpressionUUID->"f6477d4b-2074-48ec-9915-a78b72bc4345"],
+Cell[18195, 407, 277, 6, 31, "CodeText",ExpressionUUID->"e375ba0b-c080-4602-9568-7da82f3da720"],
+Cell[18475, 415, 3052, 47, 218, "Input",ExpressionUUID->"4f1838ab-d92f-43ae-a02b-125939dcb3a9"],
+Cell[21530, 464, 224, 5, 31, "CodeText",ExpressionUUID->"656af85a-afa0-480a-be0e-d497ba9e4cd3"],
+Cell[21757, 471, 306, 6, 28, "Input",ExpressionUUID->"86ca0a31-198a-4080-9244-682da702e8f4"],
+Cell[22066, 479, 840, 16, 80, "Text",ExpressionUUID->"b344b560-8eef-4c5b-be3d-dcb18e60931d"],
+Cell[22909, 497, 338, 7, 31, "CodeText",ExpressionUUID->"aa5a9a2e-a7a6-49ca-9480-8158381d717b"],
+Cell[CellGroupData[{
+Cell[23272, 508, 313, 8, 28, "Input",ExpressionUUID->"2f562714-1c6f-41de-a29f-3f531e841824"],
+Cell[23588, 518, 263, 4, 32, "Output",ExpressionUUID->"a1af3f12-7ff5-42f8-8509-b3b319a8a51d"]
+}, Open  ]],
+Cell[23866, 525, 1031, 17, 80, "Text",ExpressionUUID->"477d7b4a-77e7-4d02-beb2-f19cbe0b3c13"],
+Cell[24900, 544, 361, 8, 31, "CodeText",ExpressionUUID->"1a9e1898-165b-4989-8fac-504e6b8fa631"],
+Cell[CellGroupData[{
+Cell[25286, 556, 360, 9, 28, "Input",ExpressionUUID->"1035ed1b-170f-470e-a705-60a1a40e2153"],
+Cell[25649, 567, 257, 3, 32, "Output",ExpressionUUID->"01c0db38-1d1e-4d03-9517-c41724858537"]
+}, Open  ]],
+Cell[25921, 573, 625, 10, 57, "Text",ExpressionUUID->"d3cdebe6-4605-428b-a44f-c1722932b229"],
+Cell[26549, 585, 257, 6, 31, "CodeText",ExpressionUUID->"a829f7ab-9cbd-4d0d-b54a-a6fe52a9c9fc"],
+Cell[CellGroupData[{
+Cell[26831, 595, 314, 8, 28, "Input",ExpressionUUID->"4b4c6be4-007a-4dd6-9641-7dd6023bc5ca"],
+Cell[27148, 605, 191, 3, 32, "Output",ExpressionUUID->"7c80c811-9e88-4900-a355-cc5885b73ba6"]
+}, Open  ]],
+Cell[27354, 611, 924, 15, 57, "Text",ExpressionUUID->"bd4e9237-28cf-459e-90b5-5497d801e063"],
+Cell[28281, 628, 560, 10, 31, "CodeText",ExpressionUUID->"5e491676-4c95-4a9d-b200-8ccc568c5d15"],
+Cell[CellGroupData[{
+Cell[28866, 642, 1037, 22, 110, "Code",ExpressionUUID->"ce7492ba-b0fd-4515-b0da-8407c4e098ba"],
+Cell[29906, 666, 8529, 157, 236, "Output",ExpressionUUID->"8e7ff42f-20f8-4811-b6c5-584fa287b591"]
+}, Open  ]],
+Cell[38450, 826, 414, 8, 57, "Text",ExpressionUUID->"d8279a76-c2ee-4c0b-96c4-5015f02ac14a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38913, 840, 550, 8, 71, "Section",ExpressionUUID->"1d8cfd54-c89c-4d85-b75e-05253d3cf398"],
+Cell[39466, 850, 1458, 22, 149, "Text",ExpressionUUID->"8d1c24b8-88f3-4f2a-98d8-e4bd5bd5fb29"],
+Cell[CellGroupData[{
+Cell[40949, 876, 219, 4, 48, "Subsection",ExpressionUUID->"e8207e80-af64-435f-9fe3-cd4231c088cf"],
+Cell[41171, 882, 437, 8, 34, "Text",ExpressionUUID->"01ea6b02-d274-43bc-aa1c-eb1b7c074431"],
+Cell[41611, 892, 396, 6, 31, "CodeText",ExpressionUUID->"e566cc49-029c-4033-9c5c-9f100eeb89fe"],
+Cell[42010, 900, 8865, 130, 890, "Input",ExpressionUUID->"4706bc21-47a0-4aee-b4fc-ba1ffb651b3e"],
+Cell[50878, 1032, 373, 7, 34, "Text",ExpressionUUID->"a109650b-862a-4ab6-86e7-2464e34c552b"],
+Cell[51254, 1041, 284, 4, 31, "CodeText",ExpressionUUID->"9dfb69e4-82be-47c0-9a27-1b52bb806666"],
+Cell[51541, 1047, 710, 14, 28, "Input",ExpressionUUID->"77d21882-3075-4e0b-be6f-61710dfed5a2"],
+Cell[52254, 1063, 237, 4, 31, "CodeText",ExpressionUUID->"8f156357-6a82-49bd-bfb1-77fae5d2b9d1"],
+Cell[52494, 1069, 341, 7, 28, "Input",ExpressionUUID->"cee9c72f-c558-44c5-a7a6-edf76b9efe6a"],
+Cell[52838, 1078, 400, 8, 57, "Text",ExpressionUUID->"c162492d-23df-4a98-9b2b-825449570293"],
+Cell[53241, 1088, 242, 5, 31, "CodeText",ExpressionUUID->"8752d393-2e92-4f89-bece-0aec0273fd77"],
+Cell[CellGroupData[{
+Cell[53508, 1097, 337, 9, 28, "Input",ExpressionUUID->"1f54c34a-9088-4f5d-a28f-1b2abf8be209"],
+Cell[53848, 1108, 192, 3, 32, "Output",ExpressionUUID->"31f43c94-4b04-4208-ac79-1c9008148ae9"]
+}, Open  ]],
+Cell[54055, 1114, 412, 7, 57, "Text",ExpressionUUID->"e609ae17-d2f9-4ca0-93a1-a78f14dffac0"],
+Cell[54470, 1123, 314, 7, 31, "CodeText",ExpressionUUID->"0283fb72-cced-4025-8df4-0279e8c6d633"],
+Cell[CellGroupData[{
+Cell[54809, 1134, 386, 10, 28, "Input",ExpressionUUID->"fdf9be9f-297e-48e4-ab1b-f539cd2eb69c"],
+Cell[55198, 1146, 197, 3, 32, "Output",ExpressionUUID->"447c5e81-3dc3-4271-a85d-3062939a54bc"]
+}, Open  ]],
+Cell[55410, 1152, 727, 13, 57, "Text",ExpressionUUID->"493c8ba4-bb36-4c70-a226-5b31801aaa6c"],
+Cell[56140, 1167, 358, 8, 31, "CodeText",ExpressionUUID->"2c363aa6-f933-4d01-8428-66323a975b06"],
+Cell[CellGroupData[{
+Cell[56523, 1179, 539, 12, 28, "Input",ExpressionUUID->"9f7a8fe7-9904-4d14-b8f9-3fc7d79abd40"],
+Cell[57065, 1193, 392, 6, 32, "Output",ExpressionUUID->"265485dd-ba18-4901-a240-13d106c76f48"]
+}, Open  ]],
+Cell[57472, 1202, 535, 9, 34, "Text",ExpressionUUID->"6b518471-ed54-4b51-8b90-a3745f22ce23"],
+Cell[58010, 1213, 419, 8, 31, "CodeText",ExpressionUUID->"e69bc16f-7a20-497b-8351-ad49b5ff7cef"],
+Cell[CellGroupData[{
+Cell[58454, 1225, 1113, 23, 110, "Code",ExpressionUUID->"8d9098fc-b0d0-4622-abae-34c96090e724"],
+Cell[59570, 1250, 8930, 165, 233, "Output",ExpressionUUID->"e56a5950-1f7c-428c-994d-51c096bc5da1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68549, 1421, 213, 4, 48, "Subsection",ExpressionUUID->"7dbafe18-7528-4bcd-89ee-c51c6759ba6a"],
+Cell[68765, 1427, 426, 8, 57, "Text",ExpressionUUID->"c541af1b-911e-4987-bf1f-cbf9c456b4c5"],
+Cell[69194, 1437, 189, 3, 31, "CodeText",ExpressionUUID->"e1f529be-29a5-4eb7-9460-17e9c985ef94"],
+Cell[69386, 1442, 563, 12, 38, "Input",ExpressionUUID->"1af9d3ee-7284-475f-8305-bfd2388134b1"],
+Cell[69952, 1456, 324, 7, 34, "Text",ExpressionUUID->"63824883-e610-4e01-99fd-0f4c12319422"],
+Cell[70279, 1465, 260, 4, 31, "CodeText",ExpressionUUID->"c8a58890-60f9-4fd1-892e-2573335a37a0"],
+Cell[70542, 1471, 434, 9, 28, "Input",ExpressionUUID->"ed62ac2f-2e94-455e-9b8c-8dc323a6bd00"],
+Cell[70979, 1482, 213, 3, 31, "CodeText",ExpressionUUID->"22de9ff7-fb70-4a02-a1eb-d9da1e05e343"],
+Cell[71195, 1487, 347, 7, 28, "Input",ExpressionUUID->"8bee2a04-6bdd-4790-8cfb-60e7702d25c0"],
+Cell[71545, 1496, 496, 9, 34, "Text",ExpressionUUID->"de34a69d-e9de-4696-98bb-44edc553614c"],
+Cell[72044, 1507, 362, 7, 31, "CodeText",ExpressionUUID->"28cd2c05-c015-49d7-86da-72b9e301adeb"],
+Cell[CellGroupData[{
+Cell[72431, 1518, 1076, 24, 110, "Code",ExpressionUUID->"16c24da9-67b3-4562-88bd-5fc3c2c67ce8"],
+Cell[73510, 1544, 9134, 168, 226, "Output",ExpressionUUID->"8776e91c-f5e2-409f-857e-d015b7288577"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82693, 1718, 202, 3, 48, "Subsection",ExpressionUUID->"7cf40797-3021-4887-b1a8-b088afec6c78"],
+Cell[82898, 1723, 829, 14, 80, "Text",ExpressionUUID->"d5f1d628-0619-47a4-84a8-e3937e4cbf3e"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[83776, 1743, 380, 6, 71, "Section",ExpressionUUID->"71a86117-da61-4f40-bc0a-df18054d297b"],
+Cell[84159, 1751, 975, 15, 103, "Text",ExpressionUUID->"6ff8e9eb-0133-49fc-939e-4bc49b95e6ec"],
+Cell[85137, 1768, 189, 3, 34, "Text",ExpressionUUID->"ff63891d-2cf1-470b-9d97-56530ad96703"],
+Cell[85329, 1773, 189, 3, 31, "CodeText",ExpressionUUID->"09878b78-24dd-4f10-9d91-92116b43061a"],
+Cell[85521, 1778, 541, 12, 38, "Input",ExpressionUUID->"f9a76a9b-6558-4d88-8238-232a4d248130"],
+Cell[86065, 1792, 325, 7, 34, "Text",ExpressionUUID->"569e109d-fd60-4c4d-8122-0eb851b6eee6"],
+Cell[86393, 1801, 305, 5, 31, "CodeText",ExpressionUUID->"f170ff18-38c7-43a2-8d71-ceffd2230b00"],
+Cell[86701, 1808, 614, 12, 28, "Input",ExpressionUUID->"a5075b1d-1cd5-4af5-8042-6626e4527d20"],
+Cell[87318, 1822, 180, 3, 31, "CodeText",ExpressionUUID->"caa19e2e-3af2-4748-954a-e57759b9cca3"],
+Cell[87501, 1827, 335, 7, 28, "Input",ExpressionUUID->"84612d9d-d1a3-46e2-8637-c36c674baad6"],
+Cell[87839, 1836, 533, 10, 57, "Text",ExpressionUUID->"4f8edcf1-82b5-448c-84ec-65258b276b93"],
+Cell[88375, 1848, 232, 4, 31, "CodeText",ExpressionUUID->"86e27fc2-131f-49ad-9c38-8b359a58b6a0"],
+Cell[CellGroupData[{
+Cell[88632, 1856, 351, 9, 28, "Input",ExpressionUUID->"e2292b68-821a-4594-af6a-ff3a9df7952e"],
+Cell[88986, 1867, 219, 4, 32, "Output",ExpressionUUID->"cc38a966-b2a1-4850-afb2-fac1c2d8f075"]
+}, Open  ]],
+Cell[89220, 1874, 313, 7, 34, "Text",ExpressionUUID->"8473f7c6-a26a-4b91-812c-e1183c3287c8"],
+Cell[89536, 1883, 224, 3, 31, "CodeText",ExpressionUUID->"ba8c054d-b808-4cf1-8386-5c88a6d11368"],
+Cell[CellGroupData[{
+Cell[89785, 1890, 303, 8, 28, "Input",ExpressionUUID->"01474d4c-7353-4b3d-8c96-efb13c4f57ea"],
+Cell[90091, 1900, 198, 3, 32, "Output",ExpressionUUID->"e5102e45-fcbb-49c5-b2d1-cd0ada423c6a"]
+}, Open  ]],
+Cell[90304, 1906, 597, 10, 34, "Text",ExpressionUUID->"8aef8760-ff05-491c-a74b-4ab308bdd745"],
+Cell[90904, 1918, 353, 5, 31, "CodeText",ExpressionUUID->"6093df3d-cbfb-4cd2-b454-f1ca7b260800"],
+Cell[CellGroupData[{
+Cell[91282, 1927, 1000, 22, 110, "Code",ExpressionUUID->"c41354dc-43b6-431e-925e-5d2f7fa1bec8"],
+Cell[92285, 1951, 10029, 182, 225, "Output",ExpressionUUID->"70ae3cbb-d17a-4b43-80f5-1009add0bd72"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[102351, 2138, 213, 4, 48, "Subsection",ExpressionUUID->"6349cb48-951f-4c84-b6dd-30a48bc89748"],
+Cell[102567, 2144, 711, 12, 80, "Text",ExpressionUUID->"64513898-2387-4fd7-aa4a-b44246c28c0a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103327, 2162, 331, 6, 71, "Section",ExpressionUUID->"4ce4584a-ef5b-4456-98a3-2818457885e5"],
+Cell[103661, 2170, 1332, 20, 80, "Text",ExpressionUUID->"dfb35fe9-a090-454a-a26f-b52ea439b3c6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[105030, 2195, 364, 6, 71, "Section",ExpressionUUID->"e0209d8d-aead-4442-864f-f78e6c65bced"],
+Cell[105397, 2203, 419, 8, 37, "Text",ExpressionUUID->"80556539-5226-4ddd-9a39-0fab4c018e79"],
+Cell[105819, 2213, 863, 14, 60, "Text",ExpressionUUID->"73b73a34-6b7e-427d-911b-19851fcc8d3e"],
+Cell[106685, 2229, 879, 14, 60, "Text",ExpressionUUID->"58a67da7-42a5-49d7-95e3-6438b1468ab2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[107601, 2248, 648, 9, 71, "Section",ExpressionUUID->"90499b9c-2ae7-4d82-b336-6ae386b6f347"],
+Cell[CellGroupData[{
+Cell[108274, 2261, 291, 5, 32, "Item",ExpressionUUID->"70b3f1e7-b9ff-41d2-be9b-2f5d1a4359ac"],
+Cell[108568, 2268, 336, 5, 32, "Item",ExpressionUUID->"1e884cbd-5c1b-4838-86cf-0131916118e1"],
+Cell[108907, 2275, 364, 6, 32, "Item",ExpressionUUID->"41fe4ce4-b31b-4ec4-b8e7-74fa0b6e79b3"],
+Cell[109274, 2283, 329, 6, 32, "Item",ExpressionUUID->"865412b5-cac2-496d-8028-35aeaa3ef110"],
+Cell[109606, 2291, 242, 4, 32, "Item",ExpressionUUID->"3ab35014-2cdb-43b4-8da8-03e98d15cfb7"],
+Cell[109851, 2297, 398, 7, 32, "Item",ExpressionUUID->"c4bb3510-85b3-4013-aadc-7c9f34d6ef12"],
+Cell[110252, 2306, 309, 6, 32, "Item",ExpressionUUID->"6f017daa-270b-4343-8563-24741356bccf"],
+Cell[110564, 2314, 321, 6, 32, "Item",ExpressionUUID->"aa276761-4afd-4b1d-b852-7a55909df414"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
